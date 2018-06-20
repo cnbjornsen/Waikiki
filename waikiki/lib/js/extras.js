@@ -79,6 +79,6 @@ jQuery(document).ready(function() {
         // options
         cellAlign: 'left',
         contain: true,
-        cellSelector: '.carousel-cell'
+        cellSelector: '.product'
     });
 });
