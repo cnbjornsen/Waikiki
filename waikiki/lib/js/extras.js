@@ -6,14 +6,14 @@
     //});
 //}(jQuery));
 
-jQuery(document).ready(function(){ 
-    /*jQuery( ".filter-button" ).click(function() { 
-        jQuery('.filter-dropdown').toggle(); 
-    }); 
-    jQuery( ".mini-filter-close" ).click(function() { 
+jQuery(document).ready(function(){
+    /*jQuery( ".filter-button" ).click(function() {
+        jQuery('.filter-dropdown').toggle();
+    });
+    jQuery( ".mini-filter-close" ).click(function() {
         jQuery('.filter-dropdown').toggle();
     });*/
-    /*jQuery( ".filter-button" ).click(function() { 
+    /*jQuery( ".filter-button" ).click(function() {
         jQuery('#genesis-sidebar-primary').toggle();
         jQuery('#genesis-sidebar-primary').focus();
     }); */
@@ -23,7 +23,7 @@ jQuery(document).ready(function(){
       else
         jQuery('#genesis-sidebar-primary').css('visibility','hidden');
     });
-    jQuery( ".mini-filter-close" ).click(function() { 
+    jQuery( ".mini-filter-close" ).click(function() {
         //jQuery('#genesis-sidebar-primary').toggle();
         jQuery('#genesis-sidebar-primary').css('visibility','hidden');
     });
@@ -34,17 +34,17 @@ jQuery(document).ready(function(){
         } else {
             jQuery('.load-more-button').hide();
     }
-    jQuery( ".waikiki-search" ).click(function() { 
-        jQuery('.search-content, .searchwp-live-search-results').toggle(); 
-        jQuery('input[type="search"]').get(0).focus(); 
+    jQuery( ".waikiki-search" ).click(function() {
+        jQuery('.search-content, .searchwp-live-search-results').toggle();
+        jQuery('input[type="search"]').get(0).focus();
 
     });
     jQuery(".search-content").keyup(function(event){
 		if (event.keyCode == 27){
 			// Close the modal/menu
 			jQuery(".search-content, .searchwp-live-search-results").toggle();
-	
-	        	//  Return focus to the element that invoked it 
+
+	        	//  Return focus to the element that invoked it
 			jQuery('.waikiki-search').focus();
 		}
 	});
@@ -62,7 +62,7 @@ jQuery(document).ready(function(){
             jQuery('.nav-toggle').addClass('activated');
     });
 });
-jQuery(document).ready(function(){ 
+jQuery(document).ready(function(){
     jQuery(document).on('facetwp-refresh', function() {
         //infiniteScroll ();
     })
@@ -78,6 +78,7 @@ jQuery(document).ready(function() {
     jQuery('.product_list_widget').flickity({
         // options
         cellAlign: 'left',
-        contain: true
+        contain: true,
+        cellSelector: '.carousel-cell'
     });
 });
