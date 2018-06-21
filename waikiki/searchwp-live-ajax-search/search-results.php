@@ -11,12 +11,12 @@
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php $post_type = get_post_type_object( get_post_type() ); ?>
-		<div class="searchwp-live-search-result" style="white-space: nowrap;">
-		<div style="display: inline-block;"><?php echo( get_the_post_thumbnail( $post->ID, array( 75, 75) ) ) ?></div>
-		<div style="display: inline-block;">
-			<p><a href="<?php echo esc_url( get_permalink() ); ?>">
+		<div class="searchwp-live-search-result">
+		<div><?php echo( get_the_post_thumbnail( $post->ID, array( 75, 75) ) ) ?></div>
+		<div>
+			<a href="<?php echo esc_url( get_permalink() ); ?>">
 				<?php the_title(); ?> &raquo;
-			</a></p>
+			</a>
 		</div>
 		</div>
 	<?php endwhile; ?>

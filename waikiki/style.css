@@ -9712,7 +9712,7 @@ button.nav-toggle:after
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	background: #fff;
-	-webkit-box-shadow: 0 0 2px 0 rgba(30,30,30,0.4);
+	/* -webkit-box-shadow: 0 0 2px 0 rgba(30,30,30,0.4); */
 	/* box-shadow: 0 0 2px 0 rgba(30,30,30,0.4); */
 	border-radius: 0 3px;
 	width: 80vw;
@@ -9724,11 +9724,21 @@ button.nav-toggle:after
 	opacity: 0.3;
 }
 
-.searchwp-live-search-result p {
-	font-size:1.2em;
-	padding:2em;
-	margin:0;
+.searchwp-live-search-result {
+	padding:15px;
 	border-bottom:1px solid rgba(30,30,30,0.1);
+  display: block;
+  -ms-display:flexbox;
+  display: flex;
+}
+
+.searchwp-live-search-result a {
+  font-size: 2em;
+}
+
+.searchwp-live-search-result > div {
+  align-self: center;
+  padding-right: 15px;
 }
 
 .searchwp-live-search-result--focused {
@@ -9741,20 +9751,6 @@ button.nav-toggle:after
 
 .searchwp-live-search-result:last-of-type p {
 	border-bottom:0;
-}
-
-.searchwp-live-search-result a {
-  font-size: 1.2em;
-	display: block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.searchwp-live-search-result span {
-  padding: 0.5em;
-  margin-left: 0;
-  margin: 0 auto;
 }
 
 /* Bullet proof Screen Reader Only text */
