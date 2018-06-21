@@ -70,24 +70,24 @@ function jk_dequeue_styles( $enqueue_styles ) {
  * @return str
  */
 /*function iconic_variable_price_format( $price, $product ) {
- 
+
     $prefix = sprintf('%s: ', __('From', 'iconic'));
- 
+
     $min_price_regular = $product->get_variation_regular_price( 'min', true );
     $min_price_sale    = $product->get_variation_sale_price( 'min', true );
     $max_price = $product->get_variation_price( 'max', true );
     $min_price = $product->get_variation_price( 'min', true );
- 
+
     $price = ( $min_price_sale == $min_price_regular ) ?
         wc_price( $min_price_regular ) :
         '<del>' . wc_price( $min_price_regular ) . '</del>' . '<ins>' . wc_price( $min_price_sale ) . '</ins>';
- 
+
     return ( $min_price == $max_price ) ?
         $price :
         sprintf('%s%s', $prefix, $price);
- 
+
 }
- 
+
 add_filter( 'woocommerce_variable_sale_price_html', 'iconic_variable_price_format', 10, 2 );
 add_filter( 'woocommerce_variable_price_html', 'iconic_variable_price_format', 10, 2 );
 
@@ -96,9 +96,9 @@ add_filter( 'woocommerce_variable_price_html', 'iconic_variable_price_format', 1
 // Add custom sizing table tab
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
 function woo_new_product_tab( $tabs ) {
-	
+
 	// Adds the new tab
-	
+
 	$tabs['size_tab'] = array(
 		'title' 	=> __( 'Størrelsesguide', 'woocommerce' ),
 		'priority' 	=> 50,
@@ -114,21 +114,21 @@ function woo_new_product_tab_content() {
 
 	// check if the repeater field has rows of data
 	if( have_rows('storrelsestabel') ):
-	
+
 	 	// loop through the rows of data
 	    while ( have_rows('storrelsestabel') ) : the_row();
-	
+
 	        // display a sub field value
 	        the_sub_field($sub_field_name, $format_value);
-	
+
 	    endwhile;
-	
+
 	else :
-	
+
 	    // no rows found
-	
+
 	endif;
-	
+
   ?><table>
   <tbody>
     <tr>
@@ -140,14 +140,14 @@ function woo_new_product_tab_content() {
       <th>Volume (L)</th>
       <th>Vægt (KG)</th>
     </tr>
-    <?php 
+    <?php
       if (get_field('storrelsestabel')) {
         $index = 1;
         while (has_sub_field('storrelsestabel')) {
           ?>
-            <tr<?php 
+            <tr<?php
                    if ($index % 2 != 0) {
-                    ?> class="bg"<?php 
+                    ?> class="bg"<?php
                   }
                 ?> class="no-bg">
               <td><?php the_sub_field('laengde'); ?></td>
@@ -158,13 +158,13 @@ function woo_new_product_tab_content() {
               <td><?php the_sub_field('volume'); ?> L</td>
               <td><?php the_sub_field('vaegt'); ?> KG</td>
             </tr>
-          <?php 
+          <?php
           $index++;
         } // end while
       } // end if
     ?>
   </tbody>
-</table><?php	
+</table><?php
 }
 
 // Allow SVG
@@ -223,7 +223,7 @@ add_action( 'wp_enqueue_scripts', 'custom_load_custom_style_sheet' );
 function custom_load_custom_style_sheet() {
 	//wp_enqueue_style( 'custom-stylesheet', CHILD_URL . '/lib/my_style.css', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style('font-awesome', get_stylesheet_directory_uri() . '/assets/fonts/fontawesome-all.min.css');
-	
+
 }
 
 // Enqueue Font Awesome.
@@ -263,27 +263,27 @@ function add_defer_attribute( $tag, $handle ) {
 }
 
 if ( class_exists( 'WooCommerce' ) ) {
-    
+
     //Add icon navigation cart and search
     add_action( 'genesis_after_title_area', 'waikiki_icon_nav' );
     function waikiki_icon_nav() {
 	    echo '<section class="icon-nav" id="icon-navigation">';
-	    
+
         echo '<div class="mini-cart"><div class="mini-cart-icon"><i class="fal fa-shopping-bag"></i></div><a class="cart-count">' . WC()->cart->cart_contents_count  . '</a>';
         echo '<div class="cart-dropdown">';
         woocommerce_mini_cart();
 		echo '</div>';
 		echo '</div>';
-		
+
 		echo '<div class="waikiki-search"><div class="search-icon"><i class="fal fa-search"></i></div>';
 	    echo '<div class="search-content">';
 	    get_search_form();
 	    echo '</div>';
 		echo '</div>';
-		
-		echo '</section>';     
+
+		echo '</section>';
     }
-    
+
     // Add mini filter dropdown for mobile screens
     add_action( 'woocommerce_before_shop_loop', 'waikiki_add_filter' );
     function waikiki_add_filter() {
@@ -291,9 +291,9 @@ if ( class_exists( 'WooCommerce' ) ) {
         /*echo '<div class="filter-dropdown">';
         genesis_do_sidebar();
 		echo '</div>';*/
-		echo '</section>';     
+		echo '</section>';
     }
-    
+
     // Enqueue Infinite-scroll JS file.
     add_action( 'wp_enqueue_scripts', 'custom_load_infinitescroll_js' );
     function custom_load_infinitescroll_js() {
@@ -335,30 +335,30 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
 add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 
 function my_wp_nav_menu_objects( $items, $args ) {
-	
+
 	// loop
 	foreach( $items as &$item ) {
-		
+
 		// vars
 		$svgicon = get_field('icon_path', $item);
 		$faicon = get_field('faicon', $item);
-		
-		
+
+
 		// append icon
 		if( $faicon ) {
-			
+
 			$item->title .= '<i class="fa fa-'.$faicon.'"></i>';
-			
+
 		} elseif($svgicon) {
-			
+
 			$item->title .= '<img src="' . get_stylesheet_directory_uri() . '/lib/img/' . $svgicon .'" class="menu-icon"/>';
 		}
-		
+
 	}
-	
+
 	// return
 	return $items;
-	
+
 }
 
 /* Force layout for WooCommerce Product categories*/
@@ -390,8 +390,8 @@ WEB REVENUE INFINITE SCROLLING
 function set_infinite_scrolling(){
     if( is_tax( 'product_cat' ) || is_tax( 'product_tag' ) || is_shop() ) {//again, only when we have more than 1 post
     //add js script below
-    ?>    
-        <script type="text/javascript">            
+    ?>
+        <script type="text/javascript">
             jQuery('.products').infiniteScroll({
               // options
               path: '.woocommerce-pagination a.next',
@@ -402,7 +402,7 @@ function set_infinite_scrolling(){
               hideNav: '.woocommerce-pagination',
               status: '.page-load-status',
             });
-        </script>        
+        </script>
     <?
     }
 }
@@ -417,3 +417,9 @@ function waikiki_close_nav(){
     echo '</button>';
 }
 add_action('genesis_before_menu-primary_wrap', 'waikiki_close_nav');
+
+/* Remove live search jax CSS */
+function my_remove_searchwp_live_search_theme_css() {
+	wp_dequeue_style( 'searchwp-live-search' );
+}
+add_action( 'wp_enqueue_scripts', 'my_remove_searchwp_live_search_theme_css' );
