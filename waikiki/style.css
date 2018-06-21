@@ -9104,6 +9104,28 @@ a.mini-filter-close{
     left: 0;
 }
 
+/***
+**
+* Product page
+**
+***/
+/* Price layout and styling*/
+
+.woocommerce div.product span.price .amount {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.woocommerce div.product p.price {
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica, Arial, sans-serif;
+
+}
+
+.woocommerce div.product p.price .woocommerce-price-suffix {
+  color: #aaa;
+}
 
 /*#genesis-sidebar-primary {
 	display: none;
