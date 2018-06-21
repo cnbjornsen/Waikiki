@@ -9748,11 +9748,17 @@ button.nav-toggle:after
   padding-right: 15px;
 }
 
-.searchwp-live-search-result--focused {
+.searchwp-live-search-result:hover,
+ .searchwp-live-search-result:focus {
 	background: #f0f1f2;
 }
 
-.searchwp-live-search-result--focused a {
+.searchwp-live-search-result:active {
+	background: #d4d4d4;
+}
+
+.searchwp-live-search-result:hover a,
+.searchwp-live-search-result:focus a {
 	color: #000;
   text-decoration: underline;
 }
