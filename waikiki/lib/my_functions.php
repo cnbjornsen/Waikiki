@@ -69,7 +69,7 @@ function jk_dequeue_styles( $enqueue_styles ) {
  * @param obj $product
  * @return str
  */
-/*function iconic_variable_price_format( $price, $product ) {
+function iconic_variable_price_format( $price, $product ) {
 
     $prefix = sprintf('%s: ', __('From', 'iconic'));
 
@@ -91,7 +91,7 @@ function jk_dequeue_styles( $enqueue_styles ) {
 add_filter( 'woocommerce_variable_sale_price_html', 'iconic_variable_price_format', 10, 2 );
 add_filter( 'woocommerce_variable_price_html', 'iconic_variable_price_format', 10, 2 );
 
-*/
+
 
 // Add custom sizing table tab
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );

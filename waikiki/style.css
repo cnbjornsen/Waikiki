@@ -6089,6 +6089,10 @@ p.demo_store a {
     font-size: 1.25em*/
 }
 
+.woocommerce div.product summary > p.price {
+  display: none;
+}
+
 .woocommerce div.product p.price ins,
 .woocommerce div.product span.price ins {
     background: inherit;
@@ -6358,6 +6362,10 @@ p.demo_store a {
 .woocommerce div.product .woocommerce-tabs .panel {
     margin: 0 0 2em;
     padding: 0
+}
+
+.woocomemrce div.product .woocommerce-tabs #tab-size_tab {
+  overflow: scroll;
 }
 
 .woocommerce div.product p.cart {
@@ -9164,6 +9172,7 @@ cursor: pointer;
 	width: 80%;
 	width: 80vw;
 	margin: 0 auto;
+  border-color: #006cff;
 }
 
 searchwp-live-search-results {
@@ -9325,291 +9334,6 @@ searchwp-live-search-results {
         display: none;
     }
 }
-
-/* Site Navigation GENESIS SAMPLE TEST
----------------------------------------------------------------------------------------------------- */
-
-/*.genesis-nav-menu {
-	clear: both;
-	line-height: 1;
-	width: 100%;
-}
-
-.genesis-nav-menu .menu-item {
-	display: block;
-	float: none;
-	position: relative;
-}
-
-.genesis-nav-menu a {
-	color: #333;
-	display: block;
-	font-size: 15px;
-	font-size: 1.5rem;
-	font-weight: 400;
-	outline-offset: -1px;
-	padding-bottom: 12px;
-	padding-top: 12px;
-	text-decoration: none;
-}
-
-.genesis-nav-menu a:focus,
-.genesis-nav-menu a:hover,
-.genesis-nav-menu .current-menu-item > a,
-.genesis-nav-menu .sub-menu .current-menu-item > a:focus,
-.genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-	color: #0073e5;
-	text-decoration: none;
-}
-
-.genesis-nav-menu .sub-menu,
-.genesis-nav-menu .sub-menu a {
-	width: 100%;
-}
-
-.genesis-nav-menu .sub-menu {
-	clear: both;
-	display: none;
-	left: -9999px;
-	margin: 0;
-	opacity: 1;
-	padding-left: 15px;
-	position: static;
-	z-index: 99;
-}
-
-.genesis-nav-menu .sub-menu a {
-	background-color: #fff;
-	font-size: 14px;
-	font-size: 1.4rem;
-	position: relative;
-	word-wrap: break-word;
-}
-
-.genesis-nav-menu .menu-item:focus,
-.genesis-nav-menu .menu-item:hover {
-	position: relative;
-}
-
-.genesis-nav-menu .menu-item:hover > .sub-menu {
-	left: auto;
-	opacity: 1;
-}
-
-/* Responsive Menu
---------------------------------------------- */
-
-/*.menu .menu-item:focus {
-	position: static;
-}
-
-.menu .menu-item > a:focus + ul.sub-menu,
-.menu .menu-item.sfHover > ul.sub-menu {
-	left: auto;
-	opacity: 1;
-}
-
-.genesis-responsive-menu {
-	display: none;
-	padding-bottom: 15px;
-	position: relative;
-}
-
-.menu-toggle,
-.sub-menu-toggle {
-	background-color: transparent;
-	border-width: 0;
-	color: #333;
-	display: block;
-	margin: 0 auto;
-	overflow: hidden;
-	text-align: center;
-	visibility: visible;
-}
-
-.menu-toggle:focus,
-.menu-toggle:hover,
-.sub-menu-toggle:focus,
-.sub-menu-toggle:hover {
-	background-color: transparent;
-	border-width: 0;
-	color: #0073e5;
-}
-
-.menu-toggle {
-	float: right;
-	line-height: 20px;
-	margin-bottom: 10px;
-	margin-top: 10px;
-	padding: 15px 0;
-	position: relative;
-	z-index: 1000;
-}
-
-.menu-toggle.activated::before {
-	content: "\f335";
-}
-
-.site-header .menu-toggle::before {
-	float: left;
-	margin-right: 5px;
-	position: relative;
-	text-rendering: auto;
-	top: 1px;
-}
-
-.sub-menu-toggle {
-	float: right;
-	padding: 9px 10px;
-	position: absolute;
-	right: 0;
-	top: 0;
-	z-index: 100;
-}
-
-.sub-menu .sub-menu-toggle {
-	padding: 12px 10px;
-}
-
-.sub-menu-toggle::before {
-	display: inline-block;
-	text-rendering: auto;
-	-webkit-transform: rotate( 0 );
-	-ms-transform:     rotate( 0 );
-	transform:         rotate( 0 );
-	transition: transform .25s ease-in-out;
-}
-
-.sub-menu-toggle.activated::before {
-	-webkit-transform: rotate( 180deg );
-	-ms-transform:     rotate( 180deg );
-	transform:         rotate( 180deg );
-}
-
-/* Header Menu
---------------------------------------------- */
-
-/*.nav-primary {
-	clear: left;
-	width: 100%;
-}
-
-/* Footer Menu
---------------------------------------------- */
-
-/*.nav-secondary {
-	margin-top: 10px;
-}
-
-.nav-secondary .genesis-nav-menu {
-	line-height: 1.5;
-}
-
-.nav-secondary .menu-item {
-	display: inline-block;
-}
-
-.nav-secondary a {
-	margin-left: 10px;
-	margin-right: 10px;
-	padding: 0;
-}
-
-@media only screen and (min-width: 896px) {
-
-	/* Genesis Menu
-	--------------------------------------------- */
-
-	/*.genesis-nav-menu .menu-item {
-		display: inline-block;
-	}
-
-	.genesis-nav-menu .menu-item:focus,
-	.genesis-nav-menu .menu-item:hover {
-		position: relative;
-	}
-
-	.genesis-nav-menu > .menu-bold > a {
-		font-weight: 700;
-	}
-
-	.genesis-nav-menu > .menu-highlight > a {
-		background-color: #333;
-		border-radius: 3px;
-		color: #fff;
-		font-weight: 600;
-		margin-left: 15px;
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-
-	.genesis-nav-menu > .menu-highlight > a:hover,
-	.genesis-nav-menu > .menu-highlight > a:focus {
-		background-color: #0073e5;
-	}
-
-	.genesis-responsive-menu .genesis-nav-menu .sub-menu,
-	.genesis-responsive-menu .genesis-nav-menu .sub-menu a {
-		width: 180px;
-	}
-
-	.genesis-nav-menu .sub-menu {
-		border-top: 1px solid #eee;
-		opacity: 0;
-		padding-left: 0;
-		position: absolute;
-		transition: opacity .4s ease-in-out;
-	}
-
-	.genesis-nav-menu .sub-menu a {
-		border: 1px solid #eee;
-		border-top: 0;
-		padding-bottom: 15px;
-		padding-top: 15px;
-	}
-
-	.genesis-nav-menu .sub-menu .sub-menu {
-		margin: -46px 0 0 179px;
-	}
-
-	/* Responsive Menu
-	--------------------------------------------- */
-
-	/*.genesis-responsive-menu {
-		display: block;
-		padding-top: 15px;
-	}
-
-	.menu-toggle,
-	.sub-menu-toggle {
-		display: none;
-		visibility: hidden;
-	}
-
-	/* Header Menu
-	--------------------------------------------- */
-
-	/*.nav-primary {
-		clear: none;
-		float: right;
-		width: auto;
-		flex: 12;
-		order: 2;
-	}
-
-	.nav-primary .genesis-nav-menu a {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-
-	.genesis-nav-menu {
-		display: flex;
-		justify-content: flex-end;
-	}
-}
-
-/* Site Navigation END
----------------------------------------------------------------------------------------------------- */
 
 .nav-primary {
     background-color: rgba(249, 216, 229,.8    );
