@@ -1690,7 +1690,7 @@ img.alignright,
 .title-area a img {
 	width: 155px;
 	margin: 0 auto;
-	
+
 }
 
 .fixed-header .shrink .title-area {
@@ -2015,7 +2015,7 @@ img.alignright,
     height: 100vh;
     width: 100vw;
     transition: all 0.75s cubic-bezier(0, 1, 0.618, 1);
-    transition-delay: 0.382s;
+    /* transition-delay: 0.382s; */
     overflow: auto;
     z-index: 1;
 
@@ -2030,7 +2030,7 @@ img.alignright,
 .nav-primary.activated .menu-item {
     opacity: 1;
     transform: translateY(0);
-    transition-delay: 0.82s;
+    transition-delay: 0.382s;
 }
 
 .no-js .nav-primary {
@@ -3908,7 +3908,7 @@ div.gs-faq .gs-faq__answer:last-of-type {
         border-radius: 5px;
         box-shadow: 0 2rem 2rem rgba(57, 62, 75, 0.15);
         padding: 0.5em 0;
-        width: 100% !important;       
+        width: 100% !important;
     }
     .sub-menu-flex ul.sub-menu{
 	    display: -ms-flexbox;
@@ -8619,7 +8619,7 @@ body:not(.search-results) .twentysixteen .entry-summary {
 }
 
 
-/** Genesis eCommerce additions STYLING 
+/** Genesis eCommerce additions STYLING
 *** eCommerce grid widget styling
 **/
 
@@ -9081,7 +9081,7 @@ a.mini-filter-close{
 	opacity: 1;
 	transition: all 0.6s ease;
 	left: 0;
-	
+
 }*/
 
 .active {
@@ -9142,7 +9142,7 @@ cursor: pointer;
     top: 0;
     left:0;
     background: rgba(0, 0, 0, 0.81);
-    transition: all 0.6s ease;	
+    transition: all 0.6s ease;
 
 }
 
@@ -9150,7 +9150,7 @@ cursor: pointer;
 /*.waikiki-search:hover .search-content, .waikiki-search:focus .search-content, .waikiki-search:active .search-content {
 	visibility: visible;
 	opacity: 1;
-	transition: all 0.6s ease;	
+	transition: all 0.6s ease;
 }*/
 
 .waikiki-search form {
@@ -9172,13 +9172,13 @@ searchwp-live-search-results {
     color: #777;
 }
 
-.load-more, 
+.load-more,
 .page-load-status
 {
     width: 100%;
 }
 
-.load-more-content, 
+.load-more-content,
 .loader-ellipse
 {
     text-align: center;
@@ -9595,7 +9595,7 @@ searchwp-live-search-results {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
-	
+
 	.genesis-nav-menu {
 		display: flex;
 		justify-content: flex-end;
@@ -9699,4 +9699,67 @@ button.nav-toggle:after
 }
 
 .menu-toggle.activated {
+}
+
+/**/
+/* AJAX LIVE SEARCH STYLING */
+/* at the very least you must set these two display properties */
+/* this is so you can use CSS animations when toggling results */
+/**/
+
+/* visual styles */
+.searchwp-live-search-results {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background: #fff;
+	-webkit-box-shadow: 0 0 2px 0 rgba(30,30,30,0.4);
+	/* box-shadow: 0 0 2px 0 rgba(30,30,30,0.4); */
+	border-radius: 0 3px;
+	width: 80vw;
+	min-height: 175px;
+	max-height: 80vh;
+}
+
+.searchwp-live-search-no-min-chars .spinner {
+	opacity: 0.3;
+}
+
+.searchwp-live-search-result p {
+	font-size:1.2em;
+	padding:2em;
+	margin:0;
+	border-bottom:1px solid rgba(30,30,30,0.1);
+}
+
+.searchwp-live-search-result--focused {
+	background: #DDD;
+}
+
+.searchwp-live-search-result--focused a {
+	color: #000;
+}
+
+.searchwp-live-search-result:last-of-type p {
+	border-bottom:0;
+}
+
+.searchwp-live-search-result a {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Bullet proof Screen Reader Only text */
+.searchwp-live-search-instructions {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;
+	height: 1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
 }
