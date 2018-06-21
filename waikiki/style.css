@@ -2087,6 +2087,7 @@ img.alignright,
 
 .site-footer .menu {
     margin-bottom: 1em;
+    padding: 0 0;
 }
 
 .site-footer .menu-item {
@@ -4714,8 +4715,9 @@ site-header .wrap .icon-nav .mini-cart .cart-dropdown li {
     margin: 0 auto;
 }
 
-.woocommerce-price-suffix {
+.home .woocommerce .woocommerce-price-suffix {
   visibility: hidden;
+  display: block;
 }
 
 .home .woocommerce li del .amount {
