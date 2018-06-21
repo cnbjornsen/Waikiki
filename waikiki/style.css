@@ -2088,6 +2088,7 @@ img.alignright,
 .site-footer .menu {
     margin-bottom: 1em;
     padding: 0 0;
+    flex-direction: row;
 }
 
 .site-footer .menu-item {

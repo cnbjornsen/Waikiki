@@ -74,11 +74,11 @@ jQuery(document).on('facetwp-loaded', function() {
     });
 });
 
-jQuery(document).ready(function() {
+/*jQuery(document).ready(function() {
     jQuery('.product_list_widget').flickity({
         // options
         cellAlign: 'left',
         contain: true,
         cellSelector: '.product'
     });
-});
+});*/
