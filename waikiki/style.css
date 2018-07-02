@@ -3660,7 +3660,7 @@ div.gs-faq .gs-faq__answer:last-of-type {
         margin-bottom: 2em;
     }
     .sidebar .widget {
-        padding: 4rem 4rem 0 0;
+        padding: 0rem 4rem 0 0;
     }
     .site-footer > .wrap {
         width: 90%;
