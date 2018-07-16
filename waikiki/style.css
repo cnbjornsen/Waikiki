@@ -5042,7 +5042,7 @@ site-header .wrap .icon-nav .mini-cart .cart-dropdown li {
 .before-footer .widget_recent_reviews li img,
 .before-footer .widget_recently_viewed_products li img {
     float: none;
-    width: 300px;
+    width: 300px !important;
     margin-bottom: 10px;
 }
 
