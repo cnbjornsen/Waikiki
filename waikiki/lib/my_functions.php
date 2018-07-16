@@ -471,7 +471,7 @@ function my_wp_nav_menu_objects( $items, $args ) {
 		// append icon
 		if( $faicon ) {
 
-			$item->title .= '<i class="fa fa-'.$faicon.'"></i>';
+			$item->title .= '<i class=".$faicon."></i>';
 
 		} elseif($svgicon) {
 
