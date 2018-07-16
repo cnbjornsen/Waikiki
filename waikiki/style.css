@@ -8965,7 +8965,7 @@ body:not(.search-results) .twentysixteen .entry-summary {
 .fp-section-4 .inner .svg-inline--fa,
 .fp-section-5 .inner .svg-inline--fa,
 .fp-section-6 .inner .svg-inline--fa {
-    color: #42a781 !important;
+    /*color: #42a781 !important;*/
     font-size: 4em;
     font-size: 4rem;
     margin-bottom: 10px;
