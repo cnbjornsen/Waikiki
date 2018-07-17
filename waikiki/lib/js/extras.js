@@ -45,28 +45,29 @@ jQuery(document).ready(function(){
 			jQuery(".search-content, .searchwp-live-search-results").toggle();
 
 	        	//  Return focus to the element that invoked it
-			jQuery('.waikiki-search').focus();
+			jQuery('.site-container').focus();
 		}
 	});
     // Show/hide the main navigation
     jQuery('.nav-toggle').click(function() {
         if ( jQuery('.nav-primary').hasClass('activated'))
-            //jQuery('#genesis-sidebar-primary').css('visibility','visible');
             jQuery('.nav-primary, .menu-toggle, .nav-toggle').removeClass('activated');
         else
             jQuery('.nav-toggle').addClass('activated');
-        //jQuery(this).toggleClass('activated');
-        //jQuery('.header-widget-area').toggleClass('activated');
     });
     jQuery('.menu-toggle').click(function() {
             jQuery('.nav-toggle').addClass('activated');
     });
 });
+
+//after facetwp loads/refreshes, do following
 jQuery(document).ready(function(){
     jQuery(document).on('facetwp-refresh', function() {
         //infiniteScroll ();
     })
 })
+
+//Hide containing widget wrapper when no results are available from facetwp
 jQuery(document).on('facetwp-loaded', function() {
     jQuery.each(FWP.settings.num_choices, function(key, val) {
         var $parent = jQuery('.facetwp-facet-' + key).closest('.widget');
