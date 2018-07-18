@@ -75,9 +75,17 @@ jQuery(document).on('facetwp-loaded', function() {
     });
 });
 
+//Flickity Initialize featured frontpage
+jQuery(document).ready(function () {
+$('.flickity-featured').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true
+});
+
 //Initialize SlickJS slider - featured products frontpage
 jQuery(document).ready(function () {
-    jQuery('.slick-featured').slick({
+    jQuery('.').slick({
         slide: 'li',
         //dots: true,
         infinite: false,

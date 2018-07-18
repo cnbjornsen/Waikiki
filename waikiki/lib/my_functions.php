@@ -356,11 +356,11 @@ function custom_load_font_awesome() {
     wp_enqueue_script( 'font-awesome', get_stylesheet_directory_uri() . '/lib/js/fontawesome-all.min.js', array(), null );
 }
 // Enqueue Flickity JS.min & CSS.
-//add_action( 'wp_enqueue_scripts', 'custom_load_flickity' );
-//function custom_load_flickity() {
-  //  wp_enqueue_script( 'flickity-js', get_stylesheet_directory_uri() . '/lib/js/flickity.pkgd.min.js', array(), null );
-    //wp_enqueue_style( 'flickity-css', get_stylesheet_directory_uri() . '/lib/css/flickity.min.css', array(), null );
-//}
+add_action( 'wp_enqueue_scripts', 'custom_load_flickity' );
+function custom_load_flickity() {
+    wp_enqueue_script( 'flickity-js', get_stylesheet_directory_uri() . '/lib/js/flickity.pkgd.min.js', array(), null );
+    wp_enqueue_style( 'flickity-css', get_stylesheet_directory_uri() . '/lib/css/flickity.min.css', array(), null );
+}
 // Enqueue Slick JS.min & CSS.
 add_action( 'wp_enqueue_scripts', 'custom_load_slick' );
 function custom_load_slick() {
@@ -591,12 +591,12 @@ function waikiki_products_shortcode_func( $atts ) {
         //'post__in'       => array_merge( array( 0 ), wc_get_product_ids_on_sale() )
     );
     ?>
-    <ul class="products slick-featured">
+    <ul class="products slick-featured flickity-featured">
         <?php
             $loop = new WP_Query( $query_args );
             if ( $loop->have_posts() ) {
                 while ( $loop->have_posts() ) : $loop->the_post();
-                    ?><li id="post-<?php the_ID(); ?>">
+                    ?><li class="carousel-cell" id="post-<?php the_ID(); ?>">
        <?php if( has_post_thumbnail() )	{?>
         <a href="<?php the_permalink(); ?>">
          <?php the_post_thumbnail( 'full'); ?>
