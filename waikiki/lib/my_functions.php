@@ -577,10 +577,10 @@ if( ! function_exists('product_test') ) {
             'posts_per_page'    => $atts['limit'],
             'meta_query'        => array(
                     'key'       => $atts['key'],
-                    'value'     => 'yes'
+                    'value'     => 'yes',
                 )
             )
-        ));
+        );
 
         ob_start();
 
