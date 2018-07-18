@@ -3281,6 +3281,7 @@ div.gs-faq .gs-faq__answer:last-of-type {
 .front-page-5 .widget {
     margin: 0 auto;
     max-width: 896px;
+    width: 100%;
 }
 
 .front-page-5 h3 {
