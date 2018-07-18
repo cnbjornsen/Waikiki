@@ -77,11 +77,12 @@ jQuery(document).on('facetwp-loaded', function() {
 
 //Flickity Initialize featured frontpage
 jQuery(document).ready(function () {
-$('.flickity-featured').flickity({
-  // options
-  cellAlign: 'left',
-  contain: true
-});
+  $('.flickity-featured').flickity({
+    // options
+    cellAlign: 'left',
+    contain: true
+  });
+})
 
 //Initialize SlickJS slider - featured products frontpage
 jQuery(document).ready(function () {
