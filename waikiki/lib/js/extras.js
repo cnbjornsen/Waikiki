@@ -80,9 +80,9 @@ jQuery(document).ready(function () {
   jQuery('.flickity-featured').flickity({
     // options
     cellAlign: 'left',
-    //contain: true,
+    contain: true,
     cellSelector: '.carousel-cell',
-    
+    pageDots: false,
 
   });
 })
