@@ -9162,6 +9162,12 @@ a.mini-filter-close{
   color: #aaa;
 }
 
+/*Remove 0 margin fix for slider items*/
+.home .woocommerce ul.slick-slider li:nth-child(4n),
+.before-footer .woocommerce ul.slick-slider li:nth-child(4n) {
+    margin-right: 2%;
+}
+
 /*#genesis-sidebar-primary {
 	display: none;
 }*/
