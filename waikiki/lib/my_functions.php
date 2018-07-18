@@ -548,65 +548,78 @@ function my_remove_searchwp_live_search_theme_css() {
 }
 add_action( 'wp_enqueue_scripts', 'my_remove_searchwp_live_search_theme_css' );
 
-// Custom Flickity WooCommerce featured products slider function func_name($atts) {
-if( ! function_exists('product_test') ) {
+// Custom SlickJS WooCommerce featured products slider
+function waikiki_products_shortcode_func( $atts ) {
+    $atts = shortcode_atts( array(
+        'per_page' => '12',
+        'columns'  => '4',
+        'orderby'  => 'date',
+        'order'    => 'desc',
+        'offset'   => 0,
+        'category' => '', // Slugs
+        'operator' => 'IN', // Possible values are 'IN', 'NOT IN', 'AND'.
+        'terms'    => 'featured',
+    ), $atts);
 
-    // Add Shortcode
-    function product_test( $atts ) {
-        global $woocommerce_loop;
+    ob_start();
 
-        // Attributes
-        $atts = shortcode_atts(
+    $query_args = array(
+        'posts_per_page' => $atts['per_page'],
+        'orderby'        => $atts['orderby'],
+        'order'          => $atts['order'],
+        'offset'         => $atts['offset'],
+        'no_found_rows'  => 1,
+        'post_status'    => 'publish',
+        'post_type'      => 'product',
+        'meta_query'     => WC()->query->get_meta_query(),
+        'tax_query' => array(
             array(
-                'columns'   => '4',
-                'limit'     => '20',
-                'start'     => current_time('Ymd'),
-                'end'       => current_time('Ymd'),
-								'key'				=> '_featured'
+                'taxonomy' => 'product_visibility',
+                'field'    => 'name',
+                'terms'    => $atts['terms'],
             ),
-            $atts, 'products_test'
-        );
+        ),
+        //Add this line for sale only products
+        //'post__in'       => array_merge( array( 0 ), wc_get_product_ids_on_sale() )
+    );
+    ?>
+    <ul class="products slick-featured">
+        <?php
+            $loop = new WP_Query( $query_args );
+            if ( $loop->have_posts() ) {
+                while ( $loop->have_posts() ) : $loop->the_post();
+                    ?><li id="post-<?php the_ID(); ?>">
+       <?php if( has_post_thumbnail() )	{?>
+        <a href="<?php the_permalink(); ?>">
+         <?php the_post_thumbnail( 'full'); ?>
+          <span><?php the_title(); ?></span>
+         </a>
+        <?php } ?>
+       </li><?php
+                endwhile;
+            } else {
+                echo __( 'No products found' );
+            }
+            wp_reset_postdata();
+        ?>
+    </ul><!--/.products-->
+    <?php
 
+    return '<div class="woocommerce columns-' . $columns . '">' . ob_get_clean() . '</div>';
 
-        $woocommerce_loop['columns'] = $atts['columns'];
-
-        // The WP_Query
-        $products = new WP_Query( array (
-            'post_type'         => 'product',
-            'post_status'       => 'publish',
-            'posts_per_page'    => $atts['limit'],
-            'meta_query'        => array(
-                    'key'       => $atts['key'],
-                    'value'     => 'yes',
-                )
-            )
-        );
-
-        ob_start();
-
-        if ( $products->have_posts() ) { ?>
-
-            <?php woocommerce_product_loop_start(); ?>
-
-                <?php while ( $products->have_posts() ) : $products->the_post(); ?>
-
-                    <?php wc_get_template_part( 'content', 'product' ); ?>
-
-                <?php endwhile; // end of the loop. ?>
-
-            <?php woocommerce_product_loop_end(); ?>
-
-            <?php
-        } else {
-            do_action( "woocommerce_shortcode_products_loop_no_results", $atts );
-            echo "<p>There is no results.</p>"
-        }
-
-        woocommerce_reset_loop();
-        wp_reset_postdata();
-
-        return '<div class="woocommerce columns-' . $atts['columns'] . '">' . ob_get_clean() . '</div>';
-    }
-
-    add_shortcode( 'products_test', 'product_test' );
 }
+add_shortcode( 'waikiki_products', 'waikiki_products_shortcode_func' );
+
+ //enqueue slick slider css
+ wp_enqueue_style( 'slickjs-style', get_stylesheet_directory_uri().'/lib/css/slick.css' );
+
+ //enqueue slick slider theme
+ wp_enqueue_style( 'slickjs-style', get_stylesheet_directory_uri().'/lib/css/slick-theme.css' );
+
+ //enqueue box slider js
+ wp_enqueue_script(
+  'slick-script',
+  get_stylesheet_directory_uri().'/lib/js/slick.min.js',
+  array('jquery'),
+  '', true
+ );
