@@ -8933,6 +8933,7 @@ body:not(.search-results) .twentysixteen .entry-summary {
 
 .front-page-3 {
   display: flex;
+  padding: 0 0 0 0;
 }
 .usp_widget {
   flex:1;
@@ -9008,7 +9009,7 @@ body:not(.search-results) .twentysixteen .entry-summary {
     /*color: #42a781 !important;*/
     font-size: 4em;
     font-size: 4rem;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
 }
 
 
