@@ -9182,6 +9182,10 @@ a.mini-filter-close{
   margin:0;
 }
 
+.carousel-cell {
+  width: 100%;
+}
+
 /*#genesis-sidebar-primary {
 	display: none;
 }*/
