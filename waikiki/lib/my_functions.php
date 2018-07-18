@@ -547,3 +547,66 @@ function my_remove_searchwp_live_search_theme_css() {
 	wp_dequeue_style( 'searchwp-live-search' );
 }
 add_action( 'wp_enqueue_scripts', 'my_remove_searchwp_live_search_theme_css' );
+
+// Custom Flickity WooCommerce featured products slider function func_name($atts) {
+if( ! function_exists('product_test') ) {
+
+    // Add Shortcode
+    function product_test( $atts ) {
+        global $woocommerce_loop;
+
+        // Attributes
+        $atts = shortcode_atts(
+            array(
+                'columns'   => '4',
+                'limit'     => '20',
+                'start'     => current_time('Ymd'),
+                'end'       => current_time('Ymd'),
+								'key'				=> '_featured'
+            ),
+            $atts, 'products_test'
+        );
+
+
+        $woocommerce_loop['columns'] = $atts['columns'];
+
+        // The WP_Query
+        $products = new WP_Query( array (
+            'post_type'         => 'product',
+            'post_status'       => 'publish',
+            'posts_per_page'    => $atts['limit'],
+            'meta_query'        => array(
+                    'key'       => $atts['key'],
+                    'value'     => 'yes'
+                )
+            )
+        ));
+
+        ob_start();
+
+        if ( $products->have_posts() ) { ?>
+
+            <?php woocommerce_product_loop_start(); ?>
+
+                <?php while ( $products->have_posts() ) : $products->the_post(); ?>
+
+                    <?php wc_get_template_part( 'content', 'product' ); ?>
+
+                <?php endwhile; // end of the loop. ?>
+
+            <?php woocommerce_product_loop_end(); ?>
+
+            <?php
+        } else {
+            do_action( "woocommerce_shortcode_products_loop_no_results", $atts );
+            echo "<p>There is no results.</p>"
+        }
+
+        woocommerce_reset_loop();
+        wp_reset_postdata();
+
+        return '<div class="woocommerce columns-' . $atts['columns'] . '">' . ob_get_clean() . '</div>';
+    }
+
+    add_shortcode( 'products_test', 'product_test' );
+}
