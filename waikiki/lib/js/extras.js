@@ -80,13 +80,16 @@ jQuery(document).ready(function () {
   jQuery('.flickity-featured').flickity({
     // options
     cellAlign: 'left',
-    contain: true
+    //contain: true,
+    cellSelector: '.carousel-cell',
+    
+
   });
 })
 
 //Initialize SlickJS slider - featured products frontpage
-jQuery(document).ready(function () {
-    jQuery('.').slick({
+/*jQuery(document).ready(function () {
+    jQuery('.slick-featured').slick({
         slide: 'li',
         //dots: true,
         infinite: false,
@@ -126,4 +129,4 @@ jQuery(document).ready(function () {
     // instead of a settings object
   ]
     });
-})
+})*/
