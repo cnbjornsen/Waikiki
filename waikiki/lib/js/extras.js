@@ -84,6 +84,9 @@ jQuery(document).ready(function () {
         arrows: false,
         speed: 300,
         slidesToShow: 4,
+        swipe: true,
+        swipeToSlide: true,
+        touchMove: true,
         //slidesToScroll: 4,
         responsive: [
             {
