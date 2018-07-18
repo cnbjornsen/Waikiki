@@ -591,7 +591,7 @@ function waikiki_products_shortcode_func( $atts ) {
         //'post__in'       => array_merge( array( 0 ), wc_get_product_ids_on_sale() )
     );
     ?>
-    <ul class="products slick-featured flickity-featured">
+    <ul class="products slick-featured slick flickity flickity-featured">
         <?php
             $loop = new WP_Query( $query_args );
             if ( $loop->have_posts() ) {

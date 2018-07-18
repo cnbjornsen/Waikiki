@@ -9138,9 +9138,10 @@ a.mini-filter-close {
 }
 
 /*Remove 0 margin fix for slider items*/
-
 .home .woocommerce ul.slick-slider li:nth-child(4n),
-.before-footer .woocommerce ul.slick-slider li:nth-child(4n) {
+.before-footer .woocommerce ul.slick-slider li:nth-child(4n),
+.home .woocommerce ul.flickity li:nth-child(4n),
+.before-footer .woocommerce ul.flickity li:nth-child(4n) {
     margin-right: 2%;
 }
 
