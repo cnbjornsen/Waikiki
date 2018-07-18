@@ -9168,6 +9168,16 @@ a.mini-filter-close{
     margin-right: 2%;
 }
 
+/*Slick slider CSS adjustments*/
+/* the slides */
+.slick-slide {
+    margin: 0 10px;
+}
+/* the parent */
+.slick-list {
+    margin: 0 -10px;
+}
+
 /*#genesis-sidebar-primary {
 	display: none;
 }*/
