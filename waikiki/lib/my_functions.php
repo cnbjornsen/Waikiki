@@ -591,19 +591,19 @@ function waikiki_products_shortcode_func( $atts ) {
         //'post__in'       => array_merge( array( 0 ), wc_get_product_ids_on_sale() )
     );
     ?>
-    <div class="products slick-featured flickity-featured">
+    <ul class="products slick-featured flickity-featured">
         <?php
             $loop = new WP_Query( $query_args );
             if ( $loop->have_posts() ) {
                 while ( $loop->have_posts() ) : $loop->the_post();
-                    ?><div class="carousel-cell" id="post-<?php the_ID(); ?>">
+                    ?><li class="carousel-cell" id="post-<?php the_ID(); ?>">
        								<?php if( has_post_thumbnail() )	{?>
 								        <a href="<?php the_permalink(); ?>">
          									<?php the_post_thumbnail( 'full'); ?>
           								<span><?php the_title(); ?></span>
          								</a>
         							<?php } ?>
-											</div><?php
+										</li><?php
                 endwhile;
             } else {
                 echo __( 'No products found' );
