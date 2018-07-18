@@ -359,7 +359,7 @@ function custom_load_font_awesome() {
 add_action( 'wp_enqueue_scripts', 'custom_load_flickity' );
 function custom_load_flickity() {
     wp_enqueue_script( 'flickity-js', get_stylesheet_directory_uri() . '/lib/js/flickity.pkgd.min.js', array(), null );
-    wp_enqueue_style( 'flickity-css', get_stylesheet_directory_uri() . '/lib/css/flickity.min.css', array(), null );
+    //wp_enqueue_style( 'flickity-css', get_stylesheet_directory_uri() . '/lib/css/flickity.min.css', array(), null );
 }
 // Enqueue Slick JS.min & CSS.
 add_action( 'wp_enqueue_scripts', 'custom_load_slick' );
