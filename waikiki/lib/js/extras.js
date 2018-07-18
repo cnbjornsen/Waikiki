@@ -77,7 +77,7 @@ jQuery(document).on('facetwp-loaded', function() {
 
 //Flickity Initialize featured frontpage
 jQuery(document).ready(function () {
-  $('.flickity-featured').flickity({
+  jQuery('.flickity-featured').flickity({
     // options
     cellAlign: 'left',
     contain: true
