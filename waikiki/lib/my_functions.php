@@ -611,7 +611,7 @@ function waikiki_products_shortcode_func( $atts ) {
 add_shortcode( 'waikiki_products', 'waikiki_products_shortcode_func' );
 
  //enqueue slick slider css
- wp_enqueue_style( 'slickjs-style', get_stylesheet_directory_uri().'/lib/css/slick.css' );
+ //wp_enqueue_style( 'slickjs-style', get_stylesheet_directory_uri().'/lib/css/slick.css' );
 
  //enqueue slick slider theme
  //wp_enqueue_style( 'slickjs-style', get_stylesheet_directory_uri().'/lib/css/slick-theme.css' );
