@@ -8675,7 +8675,6 @@ body:not(.search-results) .twentysixteen .entry-summary {
 /** Genesis eCommerce additions STYLING
 *** eCommerce grid widget styling
 **/
-
 #front-intro {
     /*margin-bottom: 6vw;*/
     overflow: auto;
@@ -8932,9 +8931,6 @@ body:not(.search-results) .twentysixteen .entry-summary {
 
 /* Begin styling USP boxes 4, 5, 6 */
 
-#front-intro .fp-section-4,
-#front-intro .fp-section-5,
-#front-intro .fp-section-6,
 .fp-section-4,
 .fp-section-5,
 .fp-section-6 {
@@ -8962,23 +8958,23 @@ body:not(.search-results) .twentysixteen .entry-summary {
     vertical-align: middle;
 }*/
 
-#front-intro .fp-section-4 .inner .wrap,
-#front-intro .fp-section-5 .inner .wrap,
-#front-intro .fp-section-6 .inner .wrap {
+.fp-section-4 .inner .wrap,
+.fp-section-5 .inner .wrap,
+.fp-section-6 .inner .wrap {
     padding: 4%;
 }
 
-#front-intro .fp-section-4 .inner .box-link,
-#front-intro .fp-section-5 .inner .box-link,
-#front-intro .fp-section-6 .inner .box-link {
+ .fp-section-4 .inner .box-link,
+ .fp-section-5 .inner .box-link,
+ .fp-section-6 .inner .box-link {
     border-bottom: none;
     display: block;
     text-decoration: none;
 }
 
-#front-intro .fp-section-4 .inner h3,
-#front-intro .fp-section-5 .inner h3,
-#front-intro .fp-section-6 .inner h3 {
+.fp-section-4 .inner h3,
+.fp-section-5 .inner h3,
+.fp-section-6 .inner h3 {
     font-family: 'Work Sans', sans-serif;
     font-size: 18px;
     font-size: 1.8rem;
@@ -8988,17 +8984,17 @@ body:not(.search-results) .twentysixteen .entry-summary {
     text-decoration: none !important;
 }
 
-#front-intro .fp-section-4 .inner p,
-#front-intro .fp-section-5 .inner p,
-#front-intro .fp-section-6 .inner p {
+.fp-section-4 .inner p,
+.fp-section-5 .inner p,
+.fp-section-6 .inner p {
     display: none;
     color: #595959;
     opacity: .6;
 }
 
-#front-intro .fp-section-4 .inner i.fa,
-#front-intro .fp-section-5 .inner i.fa,
-#front-intro .fp-section-6 .inner i.fa,
+.fp-section-4 .inner i.fa,
+.fp-section-5 .inner i.fa,
+.fp-section-6 .inner i.fa,
 .fp-section-4 .inner .svg-inline--fa,
 .fp-section-5 .inner .svg-inline--fa,
 .fp-section-6 .inner .svg-inline--fa {
