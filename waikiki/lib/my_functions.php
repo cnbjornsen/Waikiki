@@ -579,6 +579,7 @@ function waikiki_products_shortcode_func( $atts ) {
         'no_found_rows'  => 1,
         'post_status'    => 'publish',
         'post_type'      => 'product',
+				'columns'        => $atts['columns'],
         'meta_query'     => WC()->query->get_meta_query(),
 				//'featured'			 => $atts['featured'],
 				//'viewed_products' => $atts['viewed_products'],
@@ -670,7 +671,8 @@ add_action( 'template_redirect', 'custom_track_product_view', 20 );
                     'post_status'    => 'publish',
                     'post_type'      => 'product',
                     'post__in'       => $viewed_products,
-                    'orderby'        => 'rand'
+                    'orderby'        => 'date',
+										'order'					 => 'desc'
                     );
     // Add meta_query to query args
     $query_args['meta_query'] = array();
@@ -704,7 +706,7 @@ add_action( 'template_redirect', 'custom_track_product_view', 20 );
 
 
     <?php wp_reset_postdata();
-    return '<div class="woocommerce columns-5 facetwp-template">' . ob_get_clean() . '</div>';
+    return '<div class="woocommerce"><ul class="products slick-featured slick flickity flickity-featured">' . ob_get_clean() . '</ul></div>';
     // ----
     // Get clean object
     $content .= ob_get_clean();
