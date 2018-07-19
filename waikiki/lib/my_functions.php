@@ -754,7 +754,7 @@ function wc3_woocommerce_recently_viewed_products( $atts, $content = null ) {
     				'post_type'      => 'product',
     				'post__in'       => $viewed_products,
     				'orderby'        => 'date',
-						'order'					 => 'desc'
+						'order'					 => 'asc'
     				);
 
 	// Add meta_query to query args
