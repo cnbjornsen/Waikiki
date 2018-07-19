@@ -9348,7 +9348,7 @@ section.icon-nav {
     height: auto;
     float: right;
     flex: 2;
-    text-align: center;
+    /*text-align: center;*/
     width: 40px;
     margin: 0 15px 0 0;
 }
