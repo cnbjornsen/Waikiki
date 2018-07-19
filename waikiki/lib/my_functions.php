@@ -754,7 +754,7 @@ function wc3_woocommerce_recently_viewed_products( $atts, $content = null ) {
     				'post_type'      => 'product',
     				'post__in'       => $viewed_products,
     				'orderby'        => 'date',
-						'oder'					 => 'desc'
+						'order'					 => 'desc'
     				);
 
 	// Add meta_query to query args
@@ -769,7 +769,7 @@ function wc3_woocommerce_recently_viewed_products( $atts, $content = null ) {
 	// If query return results
 	if ( $r->have_posts() ) {
 
-		$content = '<ul class="rc_wc_rvp_product_list_widget products slick-featured slick flickity flickity-featured">';
+		$content = '<div class="woocommerce"><ul class="rc_wc_rvp_product_list_widget products slick-featured slick flickity flickity-featured">';
 
 		// Start the loop
 		while ( $r->have_posts()) {
@@ -783,12 +783,13 @@ function wc3_woocommerce_recently_viewed_products( $atts, $content = null ) {
 			</li>';
 		}
 
-		$content .= '</ul>';
+		$content .= '</ul></div>';
 
 	}
 
 	// Get clean object
 	$content .= ob_get_clean();
+
 
 	// Return whole content
 	return $content;
