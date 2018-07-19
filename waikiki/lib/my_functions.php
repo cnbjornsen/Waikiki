@@ -623,3 +623,52 @@ function waikiki_products_shortcode_func( $atts ) {
 
 }
 add_shortcode( 'waikiki_products', 'waikiki_products_shortcode_func' );
+
+// Custom SlickJS WooCommerce featured products slider
+function waikiki_products_wc3_shortcode_func( $atts ) {
+    $atts = shortcode_atts( array(
+        'per_page' => '12',
+        'columns'  => '4',
+        'orderby'  => 'date',
+        'order'    => 'desc',
+        'offset'   => 0,
+        'category' => '', // Slugs
+        'operator' => 'IN', // Possible values are 'IN', 'NOT IN', 'AND'.
+        'terms'    => '',
+				'post__in' => '',
+				'featured' => '',
+				'viewed_products' => ''
+    ), $atts);
+
+    $query_args = array(
+        'posts_per_page' => $atts['per_page'],
+        'orderby'        => $atts['orderby'],
+        'order'          => $atts['order'],
+        'offset'         => $atts['offset'],
+        'no_found_rows'  => 1,
+        'post_status'    => 'publish',
+        'post_type'      => 'product',
+        'meta_query'     => WC()->query->get_meta_query(),
+				'featured'			 => $atts['featured'],
+				'viewed_products' => $atts['viewed_products'],
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'product_visibility',
+                'field'    => 'name',
+                'terms'    => $atts['terms'],
+            ),
+        ),
+        //Add this line for sale only products
+        //'post__in'       => array_merge( array( 0 ), wc_get_product_ids_on_sale() )
+				//'post__in'       => '$'$atts['post__in'],
+    );
+    ?>
+    <ul class="products slick-featured slick flickity flickity-featured">
+        <?php
+            $products = wc_get_products( $args );
+        ?>
+    </ul><!--/.products-->
+    <?php
+
+}
+add_shortcode( 'waikiki_products_wc3', 'waikiki_products_wc3_shortcode_func' );
