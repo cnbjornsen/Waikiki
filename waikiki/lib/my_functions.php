@@ -618,7 +618,7 @@ function waikiki_products_shortcode_func( $atts ) {
     return '<div class="woocommerce columns-' . $columns . '">' . ob_get_clean() . '</div>';
 
 }
-add_shortcode( 'waikiki_products', 'waikiki_products_shortcode_func' );
+add_shortcode( 'waikiki_products_featured', 'waikiki_products_shortcode_func' );
 
 //short code to get the woocommerce recently viewed products
 function custom_track_product_view() {
