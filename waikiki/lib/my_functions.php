@@ -563,7 +563,7 @@ add_action( 'wp_enqueue_scripts', 'my_remove_searchwp_live_search_theme_css' );
 function waikiki_products_shortcode_func( $atts ) {
     $atts = shortcode_atts( array(
         'per_page' => '24',
-        'columns'  => '5',
+        'columns'  => '4',
         'orderby'  => 'date',
         'order'    => 'desc',
         'offset'   => 0,
@@ -619,7 +619,7 @@ function waikiki_products_shortcode_func( $atts ) {
     </ul><!--/.products-->
     <?php
 
-    return '<div class="woocommerce columns-5">' . ob_get_clean() . '</div>';
+    return '<div class="woocommerce columns-4">' . ob_get_clean() . '</div>';
 
 }
 add_shortcode( 'waikiki_products_featured', 'waikiki_products_shortcode_func' );
