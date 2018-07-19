@@ -722,7 +722,7 @@ add_shortcode("waikiki_products_recent", "rc_woocommerce_recently_viewed_product
  * This shortcode displays recently viewed products using WooCommerce default cookie
  * It only has one parameter "per_page" to choose number of items to show
 */
-function rc_woocommerce_recently_viewed_products( $atts, $content = null ) {
+function wc3_woocommerce_recently_viewed_products( $atts, $content = null ) {
 
 	// Get shortcode parameters
 	extract(shortcode_atts(array(
@@ -795,4 +795,4 @@ function rc_woocommerce_recently_viewed_products( $atts, $content = null ) {
 }
 
 // Register the shortcode
-add_shortcode("woocommerce_recently_viewed_products", "rc_woocommerce_recently_viewed_products");
+add_shortcode("woocommerce_recently_viewed_products", "wc3_woocommerce_recently_viewed_products");
