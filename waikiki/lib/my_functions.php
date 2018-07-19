@@ -566,10 +566,7 @@ function waikiki_products_shortcode_func( $atts ) {
         'offset'   => 0,
         'category' => '', // Slugs
         'operator' => 'IN', // Possible values are 'IN', 'NOT IN', 'AND'.
-        'terms'    => '',
-				'post__in' => '',
-				'featured' => '',
-				'viewed_products' => ''
+        'terms'    => 'featured',
     ), $atts);
 
     ob_start();
@@ -594,7 +591,6 @@ function waikiki_products_shortcode_func( $atts ) {
         ),
         //Add this line for sale only products
         //'post__in'       => array_merge( array( 0 ), wc_get_product_ids_on_sale() )
-				'post__in'       => '$'$atts['post__in'],
     );
     ?>
     <ul class="products slick-featured slick flickity flickity-featured">
@@ -623,3 +619,97 @@ function waikiki_products_shortcode_func( $atts ) {
 
 }
 add_shortcode( 'waikiki_products', 'waikiki_products_shortcode_func' );
+
+//short code to get the woocommerce recently viewed products
+ <?php  function custom_track_product_view() {
+    if ( ! is_singular( 'product' ) ) {
+        return;
+    }
+
+    global $post;
+
+    if ( empty( $_COOKIE['woocommerce_recently_viewed'] ) )
+        $viewed_products = array();
+    else
+        $viewed_products = (array) explode( '|', $_COOKIE['woocommerce_recently_viewed'] );
+
+    if ( ! in_array( $post->ID, $viewed_products ) ) {
+        $viewed_products[] = $post->ID;
+    }
+
+    if ( sizeof( $viewed_products ) > 15 ) {
+        array_shift( $viewed_products );
+    }
+
+    // Store for session only
+    wc_setcookie( 'woocommerce_recently_viewed', implode( '|', $viewed_products ) );
+}
+
+add_action( 'template_redirect', 'custom_track_product_view', 20 );
+ function rc_woocommerce_recently_viewed_products( $atts, $content = null ) {
+    // Get shortcode parameters
+    extract(shortcode_atts(array(
+        "per_page" => '5'
+    ), $atts));
+    // Get WooCommerce Global
+    global $woocommerce;
+    // Get recently viewed product cookies data
+    $viewed_products = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', $_COOKIE['woocommerce_recently_viewed'] ) : array();
+    $viewed_products = array_filter( array_map( 'absint', $viewed_products ) );
+    // If no data, quit
+    if ( empty( $viewed_products ) )
+        return __( 'You have not viewed any product yet!', 'rc_wc_rvp' );
+    // Create the object
+    ob_start();
+    // Get products per page
+    if( !isset( $per_page ) ? $number = 5 : $number = $per_page )
+    // Create query arguments array
+    $query_args = array(
+                    'posts_per_page' => $number,
+                    'no_found_rows'  => 1,
+                    'post_status'    => 'publish',
+                    'post_type'      => 'product',
+                    'post__in'       => $viewed_products,
+                    'orderby'        => 'rand'
+                    );
+    // Add meta_query to query args
+    $query_args['meta_query'] = array();
+    // Check products stock status
+    $query_args['meta_query'][] = $woocommerce->query->stock_status_meta_query();
+    // Create a new query
+    $r = new WP_Query($query_args);
+
+    // ----
+    if (empty($r)) {
+      return __( 'You have not viewed any product yet!', 'rc_wc_rvp' );
+
+    }?>
+ <?php while ( $r->have_posts() ) : $r->the_post();
+   $url= wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+
+   ?>
+
+   <!-- //put your theme html loop hare -->
+	 <li class="carousel-cell" id="post-<?php the_ID(); ?>">
+		 <?php if( has_post_thumbnail() )	{?>
+			 <a href="<?php the_permalink(); ?>">
+				 <?php the_post_thumbnail( 'full'); ?>
+				 <span><?php the_title(); ?></span>
+			 </a>
+		 <?php } ?>
+	 </li>
+<!-- end html loop  -->
+<?php endwhile; ?>
+
+
+
+    <?php wp_reset_postdata();
+    return '<div class="woocommerce columns-5 facetwp-template">' . ob_get_clean() . '</div>';
+    // ----
+    // Get clean object
+    $content .= ob_get_clean();
+    // Return whole content
+    return $content;
+}
+// Register the shortcode
+add_shortcode("waikiki_products_recent", "rc_woocommerce_recently_viewed_products");
