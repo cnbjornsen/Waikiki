@@ -621,7 +621,7 @@ function waikiki_products_shortcode_func( $atts ) {
 add_shortcode( 'waikiki_products', 'waikiki_products_shortcode_func' );
 
 //short code to get the woocommerce recently viewed products
- <?php  function custom_track_product_view() {
+function custom_track_product_view() {
     if ( ! is_singular( 'product' ) ) {
         return;
     }
