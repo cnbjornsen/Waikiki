@@ -715,3 +715,84 @@ add_action( 'template_redirect', 'custom_track_product_view', 20 );
 }
 // Register the shortcode
 add_shortcode("waikiki_products_recent", "rc_woocommerce_recently_viewed_products");
+
+/**
+ * Register the [woocommerce_recently_viewed_products per_page="5"] shortcode
+ *
+ * This shortcode displays recently viewed products using WooCommerce default cookie
+ * It only has one parameter "per_page" to choose number of items to show
+*/
+function rc_woocommerce_recently_viewed_products( $atts, $content = null ) {
+
+	// Get shortcode parameters
+	extract(shortcode_atts(array(
+		"per_page" => '5'
+	), $atts));
+
+	// Get WooCommerce Global
+	global $woocommerce;
+
+	// Get recently viewed product cookies data
+	$viewed_products = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', $_COOKIE['woocommerce_recently_viewed'] ) : array();
+	$viewed_products = array_filter( array_map( 'absint', $viewed_products ) );
+
+	// If no data, quit
+	if ( empty( $viewed_products ) )
+		return __( 'You have not viewed any product yet!', 'rc_wc_rvp' );
+
+	// Create the object
+	ob_start();
+
+	// Get products per page
+	if( !isset( $per_page ) ? $number = 5 : $number = $per_page )
+
+	// Create query arguments array
+    $query_args = array(
+    				'posts_per_page' => $number,
+    				'no_found_rows'  => 1,
+    				'post_status'    => 'publish',
+    				'post_type'      => 'product',
+    				'post__in'       => $viewed_products,
+    				'orderby'        => 'date',
+						'oder'					 => 'desc'
+    				);
+
+	// Add meta_query to query args
+	$query_args['meta_query'] = array();
+
+    // Check products stock status
+    $query_args['meta_query'][] = $woocommerce->query->stock_status_meta_query();
+
+	// Create a new query
+	$r = new WP_Query($query_args);
+
+	// If query return results
+	if ( $r->have_posts() ) {
+
+		$content = '<ul class="rc_wc_rvp_product_list_widget products slick-featured slick flickity flickity-featured">';
+
+		// Start the loop
+		while ( $r->have_posts()) {
+			$r->the_post();
+			global $product;
+
+			$content .= '<li class="carousel-cell">
+				<a href="' . get_permalink() . '">
+					' . ( has_post_thumbnail() ? get_the_post_thumbnail( $r->post->ID, 'shop_thumbnail' ) : woocommerce_placeholder_img( 'shop_thumbnail' ) ) . ' ' . get_the_title() . '
+				</a> ' . $product->get_price_html() . '
+			</li>';
+		}
+
+		$content .= '</ul>';
+
+	}
+
+	// Get clean object
+	$content .= ob_get_clean();
+
+	// Return whole content
+	return $content;
+}
+
+// Register the shortcode
+add_shortcode("woocommerce_recently_viewed_products", "rc_woocommerce_recently_viewed_products");
