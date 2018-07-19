@@ -556,11 +556,11 @@ function my_remove_searchwp_live_search_theme_css() {
 }
 add_action( 'wp_enqueue_scripts', 'my_remove_searchwp_live_search_theme_css' );
 
-// Custom SlickJS WooCommerce featured products slider
+// Custom Flickity WooCommerce featured products slider
 function waikiki_products_shortcode_func( $atts ) {
     $atts = shortcode_atts( array(
-        'per_page' => '12',
-        'columns'  => '4',
+        'per_page' => '24',
+        'columns'  => '5',
         'orderby'  => 'date',
         'order'    => 'desc',
         'offset'   => 0,
