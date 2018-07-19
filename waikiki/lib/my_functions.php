@@ -662,13 +662,16 @@ function waikiki_products_wc3_shortcode_func( $atts ) {
         //'post__in'       => array_merge( array( 0 ), wc_get_product_ids_on_sale() )
 				//'post__in'       => '$'$atts['post__in'],
     );
-    ?>
-    <ul class="products slick-featured slick flickity flickity-featured">
-        <?php
-            $products = wc_get_products( $args );
-        ?>
-    </ul><!--/.products-->
-    <?php
+				    // Handle some BW compatibility arg names where wp_query args differ in naming.
+				    foreach ( $query_args as $from => $to ) {
+				        if ( isset( $args[ $from ] ) ) {
+				            $args[ $to ] = $args[ $from ];
+				        }
+				    }
+
+				    $query = new WC_Product_Query( $args );
+				    return $query->get_products();
+		}
 
 }
 add_shortcode( 'waikiki_products_wc3', 'waikiki_products_wc3_shortcode_func' );
