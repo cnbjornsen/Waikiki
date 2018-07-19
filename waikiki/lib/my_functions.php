@@ -566,7 +566,10 @@ function waikiki_products_shortcode_func( $atts ) {
         'offset'   => 0,
         'category' => '', // Slugs
         'operator' => 'IN', // Possible values are 'IN', 'NOT IN', 'AND'.
-        'terms'    => 'featured',
+        'terms'    => '',
+				'post__in' => '',
+				'featured' => '',
+				'viewed_products' => ''
     ), $atts);
 
     ob_start();
@@ -580,6 +583,8 @@ function waikiki_products_shortcode_func( $atts ) {
         'post_status'    => 'publish',
         'post_type'      => 'product',
         'meta_query'     => WC()->query->get_meta_query(),
+				'featured'			 => $atts['featured'],
+				'viewed_products' => $atts['viewed_products'],
         'tax_query' => array(
             array(
                 'taxonomy' => 'product_visibility',
@@ -589,6 +594,7 @@ function waikiki_products_shortcode_func( $atts ) {
         ),
         //Add this line for sale only products
         //'post__in'       => array_merge( array( 0 ), wc_get_product_ids_on_sale() )
+				//'post__in'       => '$'$atts['post__in'],
     );
     ?>
     <ul class="products slick-featured slick flickity flickity-featured">
