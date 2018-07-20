@@ -550,11 +550,24 @@ function waikiki_close_nav(){
 }
 add_action('genesis_before_menu-primary_wrap', 'waikiki_close_nav');
 
-/* Remove live search jax CSS */
+/* Remove live search ajax CSS */
 function my_remove_searchwp_live_search_theme_css() {
 	wp_dequeue_style( 'searchwp-live-search' );
 }
 add_action( 'wp_enqueue_scripts', 'my_remove_searchwp_live_search_theme_css' );
+/*
+ * Custom logo for login page
+ */
+function my_login_logo_one() {
+?>
+<style type="text/css">
+body.login div#login h1 a {
+background-image: url(http://test.waikiki.dk/wp-content/uploads/2018/06/Artboard-1-e1527934374858.png);  //Add your own logo image in this url 
+padding-bottom: 30px;
+}
+</style>
+<?php
+} add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
 
 /**
  * Custom Flickity WooCommerce featured products slider

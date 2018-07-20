@@ -9356,7 +9356,8 @@ section.icon-nav {
 .search-icon,
 .mini-cart-icon {
     font-size: 25px;
-    /*float: right;*/
+    float: right;
+    max-width: 20px;
     cursor: pointer;
 }
 
