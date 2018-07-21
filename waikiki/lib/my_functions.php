@@ -699,7 +699,6 @@ if ( $loop->have_posts() ) {
         ' . ( has_post_thumbnail() ? get_the_post_thumbnail( $r->post->ID, 'shop_thumbnail' ) : woocommerce_placeholder_img( 'shop_thumbnail' ) ) . ' ' . get_the_title() . '
       </a> ' . $product->get_price_html() . '
     </li>';
-    endwhile;
   }
 
   $content .= '</ul></div>';
