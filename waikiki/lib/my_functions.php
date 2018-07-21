@@ -582,6 +582,7 @@ color: #0073aa;
  * Custom Flickity WooCommerce featured products slider
  *
 */
+/*
 function waikiki_products_shortcode_func( $atts ) {
     $atts = shortcode_atts( array(
         'per_page' => '24',
@@ -643,8 +644,79 @@ function waikiki_products_shortcode_func( $atts ) {
 
     return '<div class="woocommerce columns-4">' . ob_get_clean() . '</div>';
 
+}*/
+function waikiki_products_shortcode_func( $atts ) {
+    $atts = shortcode_atts( array(
+        'per_page' => '24',
+        'columns'  => '4',
+        'orderby'  => 'date',
+        'order'    => 'desc',
+        'offset'   => 0,
+        'category' => '', // Slugs
+        'operator' => 'IN', // Possible values are 'IN', 'NOT IN', 'AND'.
+        'terms'    => 'featured',
+    ), $atts);
+
+    // Get WooCommerce Global - TEST
+    global $woocommerce;
+
+    ob_start();
+
+    $query_args = array(
+        'posts_per_page' => $atts['per_page'],
+        'orderby'        => $atts['orderby'],
+        'order'          => $atts['order'],
+        'offset'         => $atts['offset'],
+        'no_found_rows'  => 1,
+        'post_status'    => 'publish',
+        'post_type'      => 'product',
+				'columns'        => $atts['columns'],
+        'meta_query'     => WC()->query->get_meta_query(),
+				//'featured'			 => $atts['featured'],
+				//'viewed_products' => $atts['viewed_products'],
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'product_visibility',
+                'field'    => 'name',
+                'terms'    => $atts['terms'],
+            ),
+        ),
+        //Add this line for sale only products
+        //'post__in'       => array_merge( array( 0 ), wc_get_product_ids_on_sale() )
+    );
+
+/*Begin new query test*/
+$loop = new WP_Query( $query_args );
+if ( $loop->have_posts() ) {
+  $content = '<div class="woocommerce"><ul class="rc_wc_rvp_product_list_widget products slick-featured slick flickity flickity-featured">';
+/*new loop test*/
+  while ( $loop->have_posts() ) {
+    $loop->the_post();
+    global $product;
+
+    $content .= '<li class="carousel-cell">
+      <a href="' . get_permalink() . '">
+        ' . ( has_post_thumbnail() ? get_the_post_thumbnail( $r->post->ID, 'shop_thumbnail' ) : woocommerce_placeholder_img( 'shop_thumbnail' ) ) . ' ' . get_the_title() . '
+      </a> ' . $product->get_price_html() . '
+    </li>';
+    endwhile;
+  }
+
+  $content .= '</ul></div>';
+} else {
+  echo __( 'No products found' );
 }
+
+  // Get clean object
+	$content .= ob_get_clean();
+
+
+	// Return whole content
+	return $content;
+}
+
 add_shortcode( 'waikiki_products_featured', 'waikiki_products_shortcode_func' );
+
 
 /**
  * Register the [woocommerce_recently_viewed_products per_page="5"] shortcode
