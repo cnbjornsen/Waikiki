@@ -570,6 +570,10 @@ body.login {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+.login #nav a {
+color: #0073aa;
+}
 </style>
 <?php
 } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
