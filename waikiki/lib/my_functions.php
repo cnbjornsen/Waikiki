@@ -629,7 +629,6 @@ function waikiki_products_shortcode_func( $atts ) {
 								        <a href="<?php the_permalink(); ?>">
          									<?php the_post_thumbnail( 'full'); ?>
           								<span><?php the_title(); ?></span>
-													<span><?php get_price_html(); ?></span>
          								</a>
         							<?php } ?>
 										</li><?php
