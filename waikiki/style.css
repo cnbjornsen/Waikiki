@@ -9179,7 +9179,8 @@ a.mini-filter-close {
 }
 
 .fs-label-wrap {
-  padding: 8px 15px
+  padding: 8px 15px;
+  width: 100%;
 }
 
 .fs-arrow {
