@@ -9206,7 +9206,9 @@ a.mini-filter-close {
 .sub-footer span.icon-footer-payment_paypal,
 .sub-footer span.icon-footer-payment_mobilepay
 {
-
+  height: 50px;
+  width: 100px;
+  display: block;
 }
 
 .sub-footer span.icon-footer-payment_visa {
