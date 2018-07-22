@@ -4600,7 +4600,8 @@ site-header .wrap .icon-nav .mini-cart .cart-dropdown li {
 }
 
 .home .woocommerce .product_list_widget,
-.before-footer .woocommerce .product_list_widget {
+.before-footer .woocommerce .product_list_widget
+{
     /*display: block;*/
     margin-bottom: 40px;
     margin-left: 0;
@@ -7256,34 +7257,45 @@ p.demo_store a {
 }
 
 .woocommerce ul.cart_list,
-.woocommerce ul.product_list_widget {
+.woocommerce ul.product_list_widget,
+.woocommerce .flickity-featured {
     list-style: none outside;
     padding: 0;
     margin: 0
 }
 
 .woocommerce ul.cart_list li,
-.woocommerce ul.product_list_widget li {
+.woocommerce ul.product_list_widget li,
+.woocommerce ul.flickity-featured li {
     padding: 4px 0;
     /* margin: 0; */
     list-style: none
 }
 
+.woocommerce ul.flickity-featured li {
+    height: 366px;
+    width: 211px;
+}
+
 .woocommerce ul.cart_list li::after,
 .woocommerce ul.cart_list li::before,
 .woocommerce ul.product_list_widget li::after,
-.woocommerce ul.product_list_widget li::before {
+.woocommerce ul.product_list_widget li::before,
+ .woocommerce ul.flickity-featured li:after,
+ .woocommerce ul.flickity-featured li:before {
     content: ' ';
     display: table
 }
 
 .woocommerce ul.cart_list li::after,
-.woocommerce ul.product_list_widget li::after {
+.woocommerce ul.product_list_widget li::after,
+.woocommerce ul.flickity-featured li:after {
     clear: both
 }
 
 .woocommerce ul.cart_list li a,
-.woocommerce ul.product_list_widget li a {
+.woocommerce ul.product_list_widget li a,
+.woocommerce ul.flickity-featured li a {
     display: block;
     /*  font-weight: 700*/
 }
@@ -7301,7 +7313,8 @@ p.demo_store a {
 }
 
 .woocommerce ul.cart_list li dl,
-.woocommerce ul.product_list_widget li dl {
+.woocommerce ul.product_list_widget li dl,
+.woocommerce ul.flickity-featured li dl {
     margin: 0;
     padding-left: 1em;
     border-left: 2px solid rgba(0, 0, 0, .1)
@@ -7310,27 +7323,33 @@ p.demo_store a {
 .woocommerce ul.cart_list li dl::after,
 .woocommerce ul.cart_list li dl::before,
 .woocommerce ul.product_list_widget li dl::after,
-.woocommerce ul.product_list_widget li dl::before {
+.woocommerce ul.product_list_widget li dl::before,
+.woocommerce ul.flickity-featured li dl::after,
+.woocommerce ul.flickity-featured li dl::before {
     content: ' ';
     display: table
 }
 
 .woocommerce ul.cart_list li dl::after,
-.woocommerce ul.product_list_widget li dl::after {
+.woocommerce ul.product_list_widget li dl::after,
+.woocommerce ul.flickity-featured li dl::after {
     clear: both
 }
 
 .woocommerce ul.cart_list li dl dd,
 .woocommerce ul.cart_list li dl dt,
 .woocommerce ul.product_list_widget li dl dd,
-.woocommerce ul.product_list_widget li dl dt {
+.woocommerce ul.product_list_widget li dl dt,
+.woocommerce ul.flickity-featured li dl dd,
+.woocommerce ul.flickity-featured li dl dt {
     display: inline-block;
     float: left;
     margin-bottom: 1em
 }
 
 .woocommerce ul.cart_list li dl dt,
-.woocommerce ul.product_list_widget li dl dt {
+.woocommerce ul.product_list_widget li dl dt,
+.woocommerce ul.flickity-featured li dl dt {
     font-weight: 700;
     padding: 0 0 .25em;
     margin: 0 4px 0 0;
@@ -7338,22 +7357,26 @@ p.demo_store a {
 }
 
 .woocommerce ul.cart_list li dl dd,
-.woocommerce ul.product_list_widget li dl dd {
+.woocommerce ul.product_list_widget li dl dd,
+.woocommerce ul.flickity-featured li dl dd {
     padding: 0 0 .25em
 }
 
 .woocommerce ul.cart_list li dl dd p:last-child,
-.woocommerce ul.product_list_widget li dl dd p:last-child {
+.woocommerce ul.product_list_widget li dl dd p:last-child,
+.woocommerce ul.flickity-featured li dl dd p:last-child {
     margin-bottom: 0
 }
 
 .woocommerce ul.cart_list li .star-rating,
-.woocommerce ul.product_list_widget li .star-rating {
+.woocommerce ul.product_list_widget li .star-rating,
+.woocommerce ul.flickity-featured li .star-rating {
     float: none
 }
 
 .woocommerce .widget_shopping_cart .total,
-.woocommerce.widget_shopping_cart .total {
+.woocommerce.widget_shopping_cart .total,
+.woocommerce ul.flickity-featured li dl dt {
     border-top: 3px double #ebe9eb;
     padding: 4px 0 0
 }
