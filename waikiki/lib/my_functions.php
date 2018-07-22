@@ -671,7 +671,7 @@ function wc3_woocommerce_recently_viewed_products( $atts, $content = null ) {
 	), $atts));
 
 	// Get WooCommerce Global
-	global $woocommerce;
+	//global $woocommerce;
 
 	// Get recently viewed product cookies data
 	$viewed_products = ! empty( $_COOKIE['woocommerce_recently_viewed'] ) ? (array) explode( '|', $_COOKIE['woocommerce_recently_viewed'] ) : array();
@@ -715,7 +715,7 @@ function wc3_woocommerce_recently_viewed_products( $atts, $content = null ) {
 		// Start the loop
 		while ( $r->have_posts()) {
 			$r->the_post();
-			global $product;
+			//global $product;
 
 			$content .= '<li class="carousel-cell">
 				<a href="' . get_permalink() . '">
