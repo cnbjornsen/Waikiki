@@ -9168,31 +9168,35 @@ a.mini-filter-close {
     margin-right: 2%;
 }
 
-/*Slick slider CSS adjustments*/
-
-/* the slides */
-
-.slick-slide {
-    margin: 0 0px;
+/*****************
+* FacetWP styling
+*****************/
+.facetwp-btn {
+  right: 15px;
+}
+.facetwp-type-fselect .fs-wrap {
+  width: 100%;
 }
 
-/* the parent */
-
-.slick-list {
-    margin: 0 20px;
+.fs-label-wrap {
+  padding: 8px 15px
 }
 
-.home .woocommerce ul.slick-slider li {
-    margin: 0;
+.fs-arrow {
+  right: 15px;
 }
-
-.carousel-cell {
-    width: 100%;
+.noUi-handle,
+.fs-label-wrap {
+  border-radius: 50px;
 }
 
 /*****************
 * Flickity styling
 *****************/
+
+.carousel-cell {
+    width: 100%;
+}
 
 .flickity-enabled {
     position: relative;
