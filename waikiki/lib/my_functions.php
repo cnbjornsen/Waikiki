@@ -760,8 +760,8 @@ function payment_info_footer_bar () {
 				<ul class="sub-footer-list sub-footer-list-verified">
 				    <lh class="sub-footer-list-item sub-footer-list-item-head">
 				        Verificeret Betaling    </lh>
-				    <li class="sub-footer-list-item sub-footer-list-item-more-margin"><span class="icon-footer_mc_secure inline-block"></span></li>
-				    <li class="sub-footer__list__item sub-footer__list__item--more-margin"><span class="icon-footer_visa_verified inline-block"></span></li>
+				    <li class="sub-footer-list-item sub-footer-list-item-extended"><span class="icon-footer_mc_secure inline-block"></span></li>
+				    <li class="sub-footer-list-item sub-footer-list-item-extended"><span class="icon-footer_visa_verified inline-block"></span></li>
 				</ul>
 			</div>
     </div>
