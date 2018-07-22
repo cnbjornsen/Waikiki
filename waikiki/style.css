@@ -9172,19 +9172,19 @@ a.mini-filter-close {
 * FacetWP styling
 *****************/
 .facetwp-btn {
-  right: 15px;
+  right: 15px !important;
 }
 .facetwp-type-fselect .fs-wrap {
   width: 100% !important;
 }
 
 .fs-label-wrap {
-  padding: 8px 15px;
-  width: 100%;
+  padding: 8px 15px !important;
+  width: 100% !important;
 }
 
 .fs-arrow {
-  right: 15px;
+  right: 15px !important;
 }
 .noUi-handle,
 .fs-label-wrap {
