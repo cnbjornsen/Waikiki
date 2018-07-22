@@ -9199,6 +9199,11 @@ a.mini-filter-close {
   width: 100%;
 }
 
+.sub-footer .wrap {
+  padding: 30px 0 0 0;
+  border-top: 1px solid #eee;
+}
+
 .sub-footer span.icon-footer-payment_visa,
 .sub-footer span.icon-footer-payment_mc,
 .sub-footer span.icon-footer-payment_maestro,
