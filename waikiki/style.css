@@ -9192,9 +9192,46 @@ a.mini-filter-close {
 }
 
 /*****************
-* subfooter
+* subfooter payment info
 *****************/
 
+.sub-footer {
+  width: 100%;
+}
+
+.sub-footer span.icon-footer-payment_visa,
+.sub-footer span.icon-footer-payment_mc,
+.sub-footer span.icon-footer-payment_maestro,
+.sub-footer span.icon-footer-payment_electron,
+.sub-footer span.icon-footer-payment_paypal,
+.sub-footer span.icon-footer-payment_mobilepay
+{
+
+}
+
+.sub-footer span.icon-footer-payment_visa {
+  background-image: url(/wp-content/uploads/2018/07/visa.svg);
+}
+
+.sub-footer span.icon-footer-payment_mc {
+  background-image: url(/wp-content/uploads/2018/07/mastercard.svg);
+}
+
+.sub-footer span.icon-footer-payment_maestro {
+  background-image: url(/wp-content/uploads/2018/07/maestro.svg);
+}
+
+.sub-footer span.icon-footer-payment_electron {
+  background-image: url(/wp-content/uploads/2018/07/visa-electron.svg);
+}
+
+.sub-footer span.icon-footer-payment_paypal {
+  background-image: url(/wp-content/uploads/2018/07/paypal.svg);
+}
+
+.sub-footer span.icon-footer-payment_mobilepay {
+  background-image: url(/wp-content/uploads/2018/07/mobilepay-blue-horizontal.svg);
+}
 
 /*****************
 * Flickity styling
