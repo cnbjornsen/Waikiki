@@ -740,7 +740,7 @@ function wc3_woocommerce_recently_viewed_products( $atts, $content = null ) {
 add_shortcode("woocommerce_recently_viewed_products", "wc3_woocommerce_recently_viewed_products");
 
 // Payemnt info efter footeren
-function( payment_info_footer_bar () {
+function payment_info_footer_bar () {
 	echo '<div class="sub-footer">
 	<div class="wrapper">
     <div class="sub-footer-inner clearfix">
@@ -763,5 +763,5 @@ function( payment_info_footer_bar () {
     </div>
 	</div>
 </div>';
-});
-add_action('genesis_after_footer-widgets_wrap', 'payment_info_footer_bar')
+};
+add_action('genesis_after_footer-widgets_wrap', 'payment_info_footer_bar');
