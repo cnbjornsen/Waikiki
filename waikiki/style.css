@@ -9434,12 +9434,19 @@ section.icon-nav {
 
 /* brand section frontpage*/
 
+.widget .brand-thumbnails, .brand-thumbnails {
+display: flex;
+justify-content: center;
+}
+
 .widget .brand-thumbnails li img,
 .brand-thumbnails li img {
     height: 50px;
     margin: 0;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+    width: auto;
+    max-width: 113px;
 }
 
 .widget .brand-thumbnails li img:hover,
