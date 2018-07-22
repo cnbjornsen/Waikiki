@@ -753,7 +753,7 @@ function payment_info_footer_bar () {
 				    <li class="sub-footer-list-item"><span class="icon-footer-payment_maestro inline-block"></span></li>
 				    <li class="sub-footer-list-item"><span class="icon-footer-payment_electron inline-block"></span></li>
 				    <!--<li class="sub-footer-list-item"><span class="icon-footer-payment_paypal inline-block"></span></li>-->
-				    <li class="sub-footer-list-item"><span class="icon-footer-payment_mobilepay inline-block"></span></li>
+				    <li class="sub-footer-list-item"><span class="icon-footer-payment_mobilepay icon-footer-payment-extended inline-block"></span></li>
 				</ul>
 			</div>
 			<div class="one-half">

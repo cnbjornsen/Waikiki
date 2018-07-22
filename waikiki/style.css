@@ -9207,13 +9207,22 @@ a.mini-filter-close {
 .sub-footer span.icon-footer-payment_mobilepay
 {
   height: 50px;
-  width: auto;
+  min-width: 50px;
   display: block;
   background-repeat: no-repeat;
   -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
+}
+
+.icon-footer-payment-extended {
+  width: 150px;
+}
+
+lh.sub-footer-list-item {
+  display: block;
+  width: 100%;
 }
 
 li.sub-footer-list-item {
