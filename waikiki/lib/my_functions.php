@@ -742,7 +742,7 @@ add_shortcode("woocommerce_recently_viewed_products", "wc3_woocommerce_recently_
 // Payemnt info efter footeren
 function payment_info_footer_bar () {
 	echo '<div class="sub-footer">
-	<div class="wrapper">
+	<div class="wrap">
     <div class="sub-footer-inner clearfix">
       <ul class="sub-footer-list sub-footer-list-payments">
 			    <lh class="sub-footer-list-item sub-footer-list-item-head">
