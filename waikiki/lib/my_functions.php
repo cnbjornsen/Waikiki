@@ -738,3 +738,30 @@ function wc3_woocommerce_recently_viewed_products( $atts, $content = null ) {
 
 // Register the shortcode
 add_shortcode("woocommerce_recently_viewed_products", "wc3_woocommerce_recently_viewed_products");
+
+// Payemnt info efter footeren
+function payment_info_footer_bar () {
+	echo '<div class="sub-footer">
+	<div class="wrapper">
+    <div class="sub-footer-inner clearfix">
+      <ul class="sub-footer-list sub-footer-list-payments">
+			    <lh class="sub-footer-list-item sub-footer-list-item-head">
+			        BETAL MED: Kreditkort, debetkort eller MobilePay    </lh>
+			    <li class="sub-footer-list-item"><span class="icon-footer-payment_visa inline-block"></span></li>
+			    <li class="sub-footer-list-item"><span class="icon-footer-payment_mc inline-block"></span></li>
+			    <li class="sub-footer-list-item"><span class="icon-footer-payment_maestro inline-block"></span></li>
+			    <li class="sub-footer-list-item"><span class="icon-footer-payment_electron inline-block"></span></li>
+			    <!--<li class="sub-footer-list-item"><span class="icon-footer-payment_paypal inline-block"></span></li>-->
+			    <li class="sub-footer-list-item"><span class="icon-footer-payment_mobilepay inline-block"></span></li>
+			</ul>
+			<ul class="sub-footer-list sub-footer-list-verified">
+			    <lh class="sub-footer-list-item sub-footer-list-item-head">
+			        Verificeret Betaling    </lh>
+			    <li class="sub-footer-list-item sub-footer-list-item-more-margin"><span class="icon-footer_mc_secure inline-block"></span></li>
+			    <li class="sub-footer__list__item sub-footer__list__item--more-margin"><span class="icon-footer_visa_verified inline-block"></span></li>
+			</ul>
+    </div>
+	</div>
+</div>';
+}
+add_action('genesis_after_footer-widgets_wrap', 'payment_info_footer_bar')
