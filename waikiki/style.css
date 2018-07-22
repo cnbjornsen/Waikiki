@@ -9207,8 +9207,10 @@ a.mini-filter-close {
 .sub-footer span.icon-footer-payment_mobilepay
 {
   height: 50px;
-  width: 100px;
+  width: auto;
   display: block;
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 
 .sub-footer span.icon-footer-payment_visa {
