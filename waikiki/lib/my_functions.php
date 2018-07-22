@@ -703,7 +703,7 @@ if ( $loop->have_posts() ) {
 
   $content .= '</ul></div>';
 } else {
-  echo __( 'No products found' );
+
 }
 
   // Get clean object
