@@ -9216,6 +9216,10 @@ a.mini-filter-close {
     background-size: contain;
 }
 
+li.sub-footer-list-item {
+  display: inline-block;
+}
+
 .sub-footer span.icon-footer-payment_visa {
   background-image: url(/wp-content/uploads/2018/07/visa.svg);
 }
