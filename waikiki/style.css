@@ -9188,7 +9188,7 @@ a.mini-filter-close {
 }
 .noUi-handle,
 .fs-label-wrap {
-  border-radius: 50px;
+  border-radius: 50px !important;
 }
 
 /*****************
