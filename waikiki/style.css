@@ -9208,8 +9208,8 @@ a.mini-filter-close {
 .sub-footer span.icon-footer_mc_secure,
 .sub-footer span.icon-footer_visa_verified
 {
-  height: 50px;
-  min-width: 32px;
+  height: 32px;
+  min-width: 50px;
   display: block;
   background-repeat: no-repeat;
   -webkit-background-size: contain;
