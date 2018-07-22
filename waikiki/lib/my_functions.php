@@ -627,31 +627,31 @@ function waikiki_products_shortcode_func( $atts ) {
 /*Begin new query test*/
 $loop = new WP_Query( $query_args );
 if ( $loop->have_posts() ) {
-  $content = '<div class="woocommerce"><ul class="rc_wc_rvp_product_list_widget products slick-featured slick flickity flickity-featured">';
+  $content2 = '<div class="woocommerce"><ul class="rc_wc_rvp_product_list_widget products slick-featured slick flickity flickity-featured">';
 /*new loop test*/
   while ( $loop->have_posts() ) {
     $loop->the_post();
     global $product;
 
-    $content .= '<li class="carousel-cell">
+    $content2 .= '<li class="carousel-cell">
       <a href="' . get_permalink() . '">
-        ' . ( has_post_thumbnail() ? get_the_post_thumbnail( $r->post->ID, 'shop_thumbnail' ) : woocommerce_placeholder_img( 'shop_thumbnail' ) ) . ' <span class="product-title"> ' . get_the_title() . ' </span>
+        ' . ( has_post_thumbnail() ? get_the_post_thumbnail( $loop->post->ID, 'shop_thumbnail' ) : woocommerce_placeholder_img( 'shop_thumbnail' ) ) . ' <span class="product-title"> ' . get_the_title() . ' </span>
       </a>
 			'. $product->get_price_html() . '
     </li>';
   }
 
-  $content .= '</ul></div>';
+  $content2 .= '</ul></div>';
 } else {
 
 }
 
   // Get clean object
-	$content .= ob_get_clean();
+	$content2 .= ob_get_clean();
 
 
 	// Return whole content
-	return $content;
+	return $content2;
 }
 
 add_shortcode( 'waikiki_products_featured', 'waikiki_products_shortcode_func' );
@@ -719,7 +719,7 @@ function wc3_woocommerce_recently_viewed_products( $atts, $content = null ) {
 
 			$content .= '<li class="carousel-cell">
 				<a href="' . get_permalink() . '">
-					' . ( has_post_thumbnail() ? get_the_post_thumbnail( $r->post->ID, 'shop_thumbnail' ) : woocommerce_placeholder_img( 'shop_thumbnail' ) ) . ' ' . get_the_title() . '
+					' . ( has_post_thumbnail() ? get_the_post_thumbnail( $r->post->ID, 'shop_thumbnail' ) : woocommerce_placeholder_img( 'shop_thumbnail' ) ) . ' <span class="product-title"> ' . get_the_title() . '</span>
 				</a> ' . $product->get_price_html() . '
 			</li>';
 		}
