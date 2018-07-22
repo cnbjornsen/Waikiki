@@ -9175,7 +9175,7 @@ a.mini-filter-close {
   right: 15px;
 }
 .facetwp-type-fselect .fs-wrap {
-  width: 100%;
+  width: 100% !important;
 }
 
 .fs-label-wrap {
