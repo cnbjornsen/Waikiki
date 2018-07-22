@@ -744,22 +744,26 @@ function payment_info_footer_bar () {
 	echo '<div class="sub-footer">
 	<div class="wrap">
     <div class="sub-footer-inner clearfix">
-      <ul class="sub-footer-list sub-footer-list-payments">
-			    <lh class="sub-footer-list-item sub-footer-list-item-head">
-			        BETAL MED: Kreditkort, debetkort eller MobilePay    </lh>
-			    <li class="sub-footer-list-item"><span class="icon-footer-payment_visa inline-block"></span></li>
-			    <li class="sub-footer-list-item"><span class="icon-footer-payment_mc inline-block"></span></li>
-			    <li class="sub-footer-list-item"><span class="icon-footer-payment_maestro inline-block"></span></li>
-			    <li class="sub-footer-list-item"><span class="icon-footer-payment_electron inline-block"></span></li>
-			    <!--<li class="sub-footer-list-item"><span class="icon-footer-payment_paypal inline-block"></span></li>-->
-			    <li class="sub-footer-list-item"><span class="icon-footer-payment_mobilepay inline-block"></span></li>
-			</ul>
-			<ul class="sub-footer-list sub-footer-list-verified">
-			    <lh class="sub-footer-list-item sub-footer-list-item-head">
-			        Verificeret Betaling    </lh>
-			    <li class="sub-footer-list-item sub-footer-list-item-more-margin"><span class="icon-footer_mc_secure inline-block"></span></li>
-			    <li class="sub-footer__list__item sub-footer__list__item--more-margin"><span class="icon-footer_visa_verified inline-block"></span></li>
-			</ul>
+		<div class="one-half first">
+	      <ul class="sub-footer-list sub-footer-list-payments">
+				    <lh class="sub-footer-list-item sub-footer-list-item-head">
+				        BETAL MED: Kreditkort, debetkort eller MobilePay    </lh>
+				    <li class="sub-footer-list-item"><span class="icon-footer-payment_visa inline-block"></span></li>
+				    <li class="sub-footer-list-item"><span class="icon-footer-payment_mc inline-block"></span></li>
+				    <li class="sub-footer-list-item"><span class="icon-footer-payment_maestro inline-block"></span></li>
+				    <li class="sub-footer-list-item"><span class="icon-footer-payment_electron inline-block"></span></li>
+				    <!--<li class="sub-footer-list-item"><span class="icon-footer-payment_paypal inline-block"></span></li>-->
+				    <li class="sub-footer-list-item"><span class="icon-footer-payment_mobilepay inline-block"></span></li>
+				</ul>
+			</div>
+			<div class="one-half">
+				<ul class="sub-footer-list sub-footer-list-verified">
+				    <lh class="sub-footer-list-item sub-footer-list-item-head">
+				        Verificeret Betaling    </lh>
+				    <li class="sub-footer-list-item sub-footer-list-item-more-margin"><span class="icon-footer_mc_secure inline-block"></span></li>
+				    <li class="sub-footer__list__item sub-footer__list__item--more-margin"><span class="icon-footer_visa_verified inline-block"></span></li>
+				</ul>
+			</div>
     </div>
 	</div>
 </div>';
