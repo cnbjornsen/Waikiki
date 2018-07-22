@@ -635,8 +635,9 @@ if ( $loop->have_posts() ) {
 
     $content .= '<li class="carousel-cell">
       <a href="' . get_permalink() . '">
-        ' . ( has_post_thumbnail() ? get_the_post_thumbnail( $r->post->ID, 'shop_thumbnail' ) : woocommerce_placeholder_img( 'shop_thumbnail' ) ) . ' ' . get_the_title() . '
-      </a> '. $product->get_the_title() . $product->get_price_html() . '
+        ' . ( has_post_thumbnail() ? get_the_post_thumbnail( $r->post->ID, 'shop_thumbnail' ) : woocommerce_placeholder_img( 'shop_thumbnail' ) ) . ' <span class="product-title"> ' . get_the_title() . ' </span>
+      </a>
+			'. $product->get_price_html() . '
     </li>';
   }
 
