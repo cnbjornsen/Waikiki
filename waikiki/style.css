@@ -9204,10 +9204,12 @@ a.mini-filter-close {
 .sub-footer span.icon-footer-payment_maestro,
 .sub-footer span.icon-footer-payment_electron,
 .sub-footer span.icon-footer-payment_paypal,
-.sub-footer span.icon-footer-payment_mobilepay
+.sub-footer span.icon-footer-payment_mobilepay,
+.sub-footer span.icon-footer_mc_secure,
+.sub-footer span.icon-footer_visa_verified
 {
   height: 50px;
-  min-width: 50px;
+  min-width: 32px;
   display: block;
   background-repeat: no-repeat;
   -webkit-background-size: contain;
@@ -9216,7 +9218,8 @@ a.mini-filter-close {
     background-size: contain;
 }
 
-.icon-footer-payment-extended {
+.icon-footer-payment-extended,
+.sub-footer-list-item-extended {
   width: 150px;
 }
 
@@ -9251,6 +9254,14 @@ li.sub-footer-list-item {
 
 .sub-footer span.icon-footer-payment_mobilepay {
   background-image: url(/wp-content/uploads/2018/07/mobilepay-blue-horizontal.svg);
+}
+
+.sub-footer span.icon-footer_mc_secure {
+  background-image: url(/wp-content/uploads/2018/07/mastercard-securecode.svg);
+}
+
+.sub-footer span.icon-footer_visa_verified {
+  background-image: url(/wp-content/uploads/2018/07/verified-by-visa.svg);
 }
 
 /*****************
