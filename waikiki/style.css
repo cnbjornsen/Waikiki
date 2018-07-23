@@ -9524,6 +9524,7 @@ section.icon-nav {
 .widget .brand-thumbnails, .brand-thumbnails {
 display: flex;
 justify-content: center;
+flex-wrap: wrap;
 }
 
 .widget .brand-thumbnails li img,
