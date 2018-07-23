@@ -769,3 +769,13 @@ function payment_info_footer_bar () {
 </div>';
 };
 add_action('genesis_after_footer-widgets_wrap', 'payment_info_footer_bar');
+
+/******
+* Hide CTA button in product category loop
+******/
+function remove_add_to_cart_buttons() {
+  if( is_product_category() || is_shop()) { 
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+  }
+}
+add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
