@@ -56,11 +56,11 @@ jQuery(document).ready(function(){
 
     jQuery('.mini-cart').click(function(){
       //jQuery('.cart-dropdown').addClass('active-cart')
-      jQuery('.cart-dropdown').css('right','0')
+      jQuery('.cart-dropdown, .cart-overlay').css('right','0')
     })
     jQuery('.close-cart-icon').click(function(){
       //jQuery('.cart-dropdown').addClass('active-cart')
-      jQuery('.cart-dropdown').css('right','-100%')
+      jQuery('.cart-dropdown, .cart-overlay').css('right','-100%')
     })
 });
 
