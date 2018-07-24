@@ -402,8 +402,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 	  echo '<section class="icon-nav" id="icon-navigation">';
 
 	    echo '<div class="mini-cart"><div class="mini-cart-icon"><i class="fal fa-shopping-bag"></i></div><a class="cart-count">' . WC()->cart->cart_contents_count  . '</a>';
-				echo '<div class="cart-overlay">';
-					echo '<div class="cart-dropdown">';
+				echo '<div class="cart-overlay cart-hidden">';
+					echo '<div class="cart-dropdown cart-hidden">';
 						echo '<div class="close-cart-icon"><i class="fal fa-times"></i></div>';
         		woocommerce_mini_cart();
 					echo '</div>';
