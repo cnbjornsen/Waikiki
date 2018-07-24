@@ -4514,9 +4514,7 @@ body.woocommerce-checkout .site-container .site-header {
 }
 .cart-overlay {
     height: 100%;
-    height: 100vh;
     width: 100%;
-    width: 100vw;
     display: block;
     position: fixed;
     background: rgba(51, 51, 51, 0.52);
