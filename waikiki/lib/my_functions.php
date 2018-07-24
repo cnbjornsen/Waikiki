@@ -399,19 +399,22 @@ if ( class_exists( 'WooCommerce' ) ) {
     //Add icon navigation cart and search
     add_action( 'genesis_after_title_area', 'waikiki_icon_nav' );
     function waikiki_icon_nav() {
-	    echo '<section class="icon-nav" id="icon-navigation">';
+	  echo '<section class="icon-nav" id="icon-navigation">';
 
-        echo '<div class="mini-cart"><div class="mini-cart-icon"><i class="fal fa-shopping-bag"></i></div><a class="cart-count">' . WC()->cart->cart_contents_count  . '</a>';
-        echo '<div class="cart-dropdown">';
-        woocommerce_mini_cart();
-		echo '</div>';
-		echo '</div>';
+	    echo '<div class="mini-cart"><div class="mini-cart-icon"><i class="fal fa-shopping-bag"></i></div><a class="cart-count">' . WC()->cart->cart_contents_count  . '</a>';
+				echo '<div class="cart-overlay">';
+					echo '<div class="cart-dropdown">';
+						echo '<div class="close-cart-icon"><i class="fal fa-times"></i></div>';
+        		woocommerce_mini_cart();
+					echo '</div>';
+				echo '</div>';
+			echo '</div>';
 
-		echo '<div class="waikiki-search"><div class="search-icon"><i class="fal fa-search"></i></div>';
-	    echo '<div class="search-content">';
-	    get_search_form();
-	    echo '</div>';
-		echo '</div>';
+			echo '<div class="waikiki-search"><div class="search-icon"><i class="fal fa-search"></i></div>';
+		    echo '<div class="search-content">';
+		    get_search_form();
+		    echo '</div>';
+			echo '</div>';
 
 		echo '</section>';
     }
@@ -774,7 +777,7 @@ add_action('genesis_after_footer-widgets_wrap', 'payment_info_footer_bar');
 * Hide CTA button in product category loop
 ******/
 function remove_add_to_cart_buttons() {
-  if( is_product_category() || is_shop()) { 
+  if( is_product_category() || is_shop()) {
     remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
   }
 }

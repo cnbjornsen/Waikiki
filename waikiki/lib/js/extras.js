@@ -58,6 +58,10 @@ jQuery(document).ready(function(){
       //jQuery('.cart-dropdown').addClass('active-cart')
       jQuery('.cart-dropdown').css('right','0')
     })
+    jQuery('.close-cart-icon').click(function(){
+      //jQuery('.cart-dropdown').addClass('active-cart')
+      jQuery('.cart-dropdown').css('right','-100%')
+    })
 });
 
 //after facetwp loads/refreshes, do following
