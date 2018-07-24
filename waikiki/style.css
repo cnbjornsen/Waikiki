@@ -4523,7 +4523,6 @@ body.woocommerce-checkout .site-container .site-header {
 }
 .cart-hidden {
   right: -120% !important;
-  transition: ease-out .3s;
 }
 .cart-active {
     right: 0;
