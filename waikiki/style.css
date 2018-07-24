@@ -4522,7 +4522,7 @@ body.woocommerce-checkout .site-container .site-header {
     top:0;
 }
 .cart-hidden {
-  right: -100%;
+  right: -100% !important;
   transition: ease-out .3s;
 }
 .cart-active {

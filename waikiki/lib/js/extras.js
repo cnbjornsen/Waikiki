@@ -57,7 +57,7 @@ jQuery(document).ready(function(){
     jQuery('.mini-cart').click(function(){
       //jQuery('.cart-dropdown').addClass('active-cart')
       //jQuery('.cart-dropdown, .cart-overlay').css('right','0')
-      jQuery('.cart-dropdown').removeClass('.cart-hidden')
+      jQuery('.cart-dropdown').removeClass('cart-hidden')
     })
     //Hide cart
     jQuery('.close-cart-icon, .cart-overlay').click(function(){
