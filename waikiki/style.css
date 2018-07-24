@@ -4547,7 +4547,7 @@ body.woocommerce-checkout .site-container .site-header {
     overflow: hidden;
 }
 
-.cart-dropdown ul.cart_list li a {
+.cart-dropdown ul.cart_list li a:nth-child(2) {
     word-break: break-word;
     word-wrap: break-word;
     width: 76%;
