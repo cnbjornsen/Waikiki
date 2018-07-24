@@ -4546,15 +4546,30 @@ body.woocommerce-checkout .site-container .site-header {
     overflow: hidden;
 }
 
+.header-widget-area .mini-cart .cart-dropdown li a:first-of-type,
+.site-header .mini-cart .cart-dropdown li a:first-of-type {
+    margin-right: 5px !important;
+}
+
 .cart-dropdown ul.cart_list li a:nth-child(2) {
     word-break: break-word;
     word-wrap: break-word;
-    width: 76%;
+    width: 75%;
     text-align: left;
     display: inline-block;
     position: inherit;
+    padding-left: 0 5px;
 }
-
+.cart-dropdown ul.cart_list li a:first-child {
+    font-size: 20px;
+    height: 100%;
+    line-height: 85px;
+    white-space: nowrap;
+    width: 5%;
+    margin-right: 0px !important;
+    padding-right: 5px;
+    text-align: left;
+}
 .close-cart-icon {
     font-size: 20px;
     cursor: pointer;
@@ -4577,10 +4592,7 @@ site-header .wrap .icon-nav .mini-cart .cart-dropdown li {
     text-decoration: none;
 }
 
-.header-widget-area .mini-cart .cart-dropdown li a:first-of-type,
-.site-header .mini-cart .cart-dropdown li a:first-of-type {
-    margin-right: 5px !important;
-}
+
 
 .header-widget-area .mini-cart .cart-dropdown li .quantity,
 .site-header .mini-cart .cart-dropdown li .quantity {
