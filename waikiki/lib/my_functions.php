@@ -219,7 +219,7 @@ function replace_variation_single_price(){
 
 // Add custom sizing table tab
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
-function woo_new_product_tab( $tabs ) {
+/*function woo_new_product_tab( $tabs ) {
 
 	// Adds the new tab
 
@@ -231,13 +231,21 @@ function woo_new_product_tab( $tabs ) {
 
 	return $tabs;
 
-}
+}*/
 function woo_new_product_tab_content() {
 
 	// The new tab content
 
 	// check if the repeater field has rows of data
 	if( have_rows('storrelsestabel') ):
+
+		$tabs['size_tab'] = array(
+			'title' 	=> __( 'Størrelsesguide', 'woocommerce' ),
+			'priority' 	=> 50,
+			'callback' 	=> 'woo_new_product_tab_content'
+		);
+
+		return $tabs;
 
 	 	// loop through the rows of data
 	    while ( have_rows('storrelsestabel') ) : the_row();
