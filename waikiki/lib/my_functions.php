@@ -235,17 +235,16 @@ add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
 function woo_new_product_tab_content() {
 
 	// The new tab content
+	$tabs['size_tab'] = array(
+		'title' 	=> __( 'Størrelsesguide', 'woocommerce' ),
+		'priority' 	=> 50,
+		'callback' 	=> 'woo_new_product_tab_content'
+	);
+
+	return $tabs;
 
 	// check if the repeater field has rows of data
 	if( have_rows('storrelsestabel') ):
-
-		$tabs['size_tab'] = array(
-			'title' 	=> __( 'Størrelsesguide', 'woocommerce' ),
-			'priority' 	=> 50,
-			'callback' 	=> 'woo_new_product_tab_content'
-		);
-
-		return $tabs;
 
 	 	// loop through the rows of data
 	    while ( have_rows('storrelsestabel') ) : the_row();
@@ -790,3 +789,13 @@ function remove_add_to_cart_buttons() {
   }
 }
 add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
+
+/*******
+* Mini cart Ajax call
+******/
+function mode_theme_update_mini_cart() {
+  echo wc_get_template( 'cart/mini-cart.php' );
+  die();
+}
+add_filter( 'wp_ajax_nopriv_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );
+add_filter( 'wp_ajax_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );

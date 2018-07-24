@@ -4560,7 +4560,7 @@ body.woocommerce-checkout .site-container .site-header {
     position: inherit;
     padding-left: 0 5px;
 }
-.cart-dropdown ul.cart_list li a:first-child {
+.cart-dropdown ul.cart_list li a:first-of-type {
     font-size: 20px;
     height: 100%;
     line-height: 85px;
