@@ -53,18 +53,53 @@ jQuery(document).ready(function(){
     jQuery('.menu-toggle').click(function() {
             jQuery('.nav-toggle').addClass('activated');
     });
-    //show cart
+  /*  //show cart
     jQuery('.mini-cart-icon').click(function(){
-      //jQuery('.cart-dropdown').addClass('active-cart')
-      //jQuery('.cart-dropdown, .cart-overlay').css('right','0')
       jQuery('.cart-dropdown,.cart-overlay').removeClass('cart-hidden');
     })
     //Hide cart
     jQuery('.close-cart-icon,.cart-overlay').click(function(){
-      //jQuery('.cart-dropdown').addClass('active-cart')
-      //jQuery('.cart-dropdown, .cart-overlay').css('right','-100%')
       jQuery('.cart-dropdown,.cart-overlay').addClass('cart-hidden');
-    })
+    })*/
+/*
+    jQuery('.mini-cart-icon').on('click', function(){
+       jQuery('.cart-dropdown, .cart-overlay').toggleClass('cart-active');
+       //jQuery('.main-wrapper').toggleClass('active');
+    });
+
+    jQuery('.close-cart-icon, .cart-overlay').on('click', function(event){
+        if(!jQuery(event.target).hasClass('nav-icon'))
+        {
+            jQuery('.offcanvas').removeClass('is-open');
+            jQuery('.main-wrapper').removeClass('active');
+        }
+    }); */
+});
+
+//Test new toggle function for off canvas cart
+jQuery(document).ready(function(){
+// Create off-canvas menu.
+var navOffCanvas = $('.cart-dropdown')
+var buttonLaunch = $('.mini-cart-icon')
+var buttonExit = $('.close-cart-icon')
+
+buttonLaunch.on('click', function () {
+  navOffCanvas.fadeIn('fast')
+  navOffCanvas.find('.cell-off-canvas').animate({
+    width: 'toggle'
+  }, 600, 'easeOutExpo')
+
+  return false
+})
+
+buttonExit.on('click', function () {
+  navOffCanvas.find('.cell-off-canvas').animate({
+    width: 'toggle'
+  }, 600, 'easeOutExpo')
+  navOffCanvas.fadeOut('fast')
+
+  return false
+})
 });
 
 //after facetwp loads/refreshes, do following
@@ -72,7 +107,8 @@ jQuery(document).ready(function(){
     jQuery(document).on('facetwp-refresh', function() {
         //infiniteScroll ();
     })
-})
+});
+
 
 //Hide containing widget wrapper when no results are available from facetwp
 jQuery(document).on('facetwp-loaded', function() {
