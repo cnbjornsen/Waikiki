@@ -54,16 +54,16 @@ jQuery(document).ready(function(){
             jQuery('.nav-toggle').addClass('activated');
     });
     //show cart
-    jQuery('.mini-cart').click(function(){
+    jQuery('.mini-cart-icon').click(function(){
       //jQuery('.cart-dropdown').addClass('active-cart')
       //jQuery('.cart-dropdown, .cart-overlay').css('right','0')
-      jQuery('.cart-dropdown').removeClass('cart-hidden')
+      jQuery('.cart-dropdown,.cart-overlay').removeClass('cart-hidden');
     })
     //Hide cart
-    jQuery('.close-cart-icon, .cart-overlay').click(function(){
+    jQuery('.close-cart-icon,.cart-overlay').click(function(){
       //jQuery('.cart-dropdown').addClass('active-cart')
       //jQuery('.cart-dropdown, .cart-overlay').css('right','-100%')
-      jQuery('.cart-dropdown, .cart-overlay').addClass('cart-hidden')
+      jQuery('.cart-dropdown,.cart-overlay').addClass('cart-hidden');
     })
 });
 
