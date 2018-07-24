@@ -63,7 +63,7 @@ jQuery(document).ready(function(){
     jQuery('.close-cart-icon, .cart-overlay').click(function(){
       //jQuery('.cart-dropdown').addClass('active-cart')
       //jQuery('.cart-dropdown, .cart-overlay').css('right','-100%')
-      jQuery('.cart-dropdown').addClass('.cart-hidden')
+      jQuery('.cart-dropdown, .cart-overlay').addClass('cart-hidden')
     })
 });
 
