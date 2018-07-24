@@ -53,14 +53,17 @@ jQuery(document).ready(function(){
     jQuery('.menu-toggle').click(function() {
             jQuery('.nav-toggle').addClass('activated');
     });
-
+    //show cart
     jQuery('.mini-cart').click(function(){
       //jQuery('.cart-dropdown').addClass('active-cart')
-      jQuery('.cart-dropdown, .cart-overlay').css('right','0')
+      //jQuery('.cart-dropdown, .cart-overlay').css('right','0')
+      jQuery('.cart-dropdown').removeClass('.cart-hidden')
     })
-    jQuery('.close-cart-icon').click(function(){
+    //Hide cart
+    jQuery('.close-cart-icon, .cart-overlay').click(function(){
       //jQuery('.cart-dropdown').addClass('active-cart')
-      jQuery('.cart-dropdown, .cart-overlay').css('right','-100%')
+      //jQuery('.cart-dropdown, .cart-overlay').css('right','-100%')
+      jQuery('.cart-dropdown').addClass('.hidden-cart')
     })
 });
 
