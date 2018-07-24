@@ -1,23 +1,16 @@
-//jQuery( "div.filter-dropdown" ).addClass( "active" );
-//(function($){
-    //$('.mini-filter').on('click', function(){
-      //  $(".filter-dropdown").removeClass("active focus hide");
-        //$(this).toggleClass("active");
-    //});
-//}(jQuery));
-
 jQuery(document).ready(function(){
+    // Floating Filter button for mobile
     jQuery('.filter-button').click(function(){
       if ( jQuery('#genesis-sidebar-primary').css('visibility') == 'hidden' )
         jQuery('#genesis-sidebar-primary').css('visibility','visible');
       else
         jQuery('#genesis-sidebar-primary').css('visibility','hidden');
     });
-
     jQuery( ".mini-filter-close" ).click(function() {
         jQuery('#genesis-sidebar-primary').css('visibility','hidden');
     });
-
+    /*
+    // Load more button - for use with infinite scroll
     if (jQuery('.woocommerce-pagination')[0]) {
             jQuery('.load-more-button').show();
         } else if (jQuery('.woocommerce-pagination').css('display') == 'none'){
@@ -25,13 +18,15 @@ jQuery(document).ready(function(){
         } else {
             jQuery('.load-more-button').hide();
     }
+    */
 
+    //Searchbox toggle
     jQuery( ".waikiki-search" ).click(function() {
         jQuery('.search-content, .searchwp-live-search-results').toggle();
         jQuery('input[type="search"]').get(0).focus();
 
     });
-
+    //Searchbox dismiss - ESC key
     jQuery(".search-content").keyup(function(event){
 		if (event.keyCode == 27){
 			// Close the modal/menu
@@ -49,7 +44,6 @@ jQuery(document).ready(function(){
         else
             jQuery('.nav-toggle').addClass('activated');
     });
-
     jQuery('.menu-toggle').click(function() {
             jQuery('.nav-toggle').addClass('activated');
     });
@@ -62,16 +56,17 @@ jQuery(document).ready(function(){
       jQuery('.cart-dropdown,.cart-overlay').addClass('cart-hidden');
     })
 });
-
+/*
 //after facetwp loads/refreshes, do following
 jQuery(document).ready(function(){
     jQuery(document).on('facetwp-refresh', function() {
         //infiniteScroll ();
     })
 });
+*/
 
 
-//Hide containing widget wrapper when no results are available from facetwp
+//Hide facetwp parent widget wrapper when no results are available
 jQuery(document).on('facetwp-loaded', function() {
     jQuery.each(FWP.settings.num_choices, function(key, val) {
         var $parent = jQuery('.facetwp-facet-' + key).closest('.widget');
@@ -91,6 +86,7 @@ jQuery(document).ready(function () {
   });
 })
 
+/*
 jQuery(document).ready(function(){
  "use strict";
 // Define the PHP function to call from here
@@ -106,3 +102,4 @@ jQuery(document).ready(function(){
  );
 // Close anon function.
 });
+*/

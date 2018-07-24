@@ -219,7 +219,7 @@ function replace_variation_single_price(){
 
 // Add custom sizing table tab
 add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
-/*function woo_new_product_tab( $tabs ) {
+function woo_new_product_tab( $tabs ) {
 
 	// Adds the new tab
 
@@ -231,17 +231,11 @@ add_filter( 'woocommerce_product_tabs', 'woo_new_product_tab' );
 
 	return $tabs;
 
-}*/
+}
 function woo_new_product_tab_content() {
 
 	// The new tab content
-	$tabs['size_tab'] = array(
-		'title' 	=> __( 'Størrelsesguide', 'woocommerce' ),
-		'priority' 	=> 50,
-		'callback' 	=> 'woo_new_product_tab_content'
-	);
 
-	return $tabs;
 
 	// check if the repeater field has rows of data
 	if( have_rows('storrelsestabel') ):
@@ -436,7 +430,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 		echo '</section>';
     }
 
-    // Enqueue Infinite-scroll JS file.
+    /*
+		// Enqueue Infinite-scroll JS file.
     add_action( 'wp_enqueue_scripts', 'custom_load_infinitescroll_js' );
     function custom_load_infinitescroll_js() {
     wp_register_script('infinitescroll', get_stylesheet_directory_uri() . '/lib/js/infinite-scroll.pkgd.min.js', array(jquery));
@@ -445,8 +440,6 @@ if ( class_exists( 'WooCommerce' ) ) {
     // Add load more button for Infinite-scroll
     add_action( 'woocommerce_after_shop_loop', 'waikiki_load_more' );
     function waikiki_load_more() {
-    /*echo '<section class="load-more"><div class="load-more-content"><a class="fwp-load-more load-more-button button white" href="#" title="Load more">Vis flere produkter NY</a></div>';
-    echo '</section>';*/
     echo '<section class="load-more"><div class="load-more-content"><a class="load-more-button button white" href="#" title="Load more">Vis flere produkter</a></div>';
     echo '</section>';
     echo '<div class="page-load-status">
@@ -458,8 +451,8 @@ if ( class_exists( 'WooCommerce' ) ) {
   </div>
   <p class="infinite-scroll-last">Thats all folks!</p>
   <p class="infinite-scroll-error">Thats all folks!</p>
-</div>';
-}
+	</div>';
+}*/
 
 }
 
@@ -526,9 +519,11 @@ add_filter( 'woocommerce_attribute', 'custom_facetwp_class' );
 /*************************
 WEB REVENUE INFINITE SCROLLING
 *************************/
+/***
+* Function that will set infinite scrolling to be displayed in the page.
+***/
+
 /*
-/* Function that will set infinite scrolling to be displayed in the page.
-*/
 function set_infinite_scrolling(){
     if( is_tax( 'product_cat' ) || is_tax( 'product_tag' ) || is_shop() ) {//again, only when we have more than 1 post
     //add js script below
@@ -548,10 +543,14 @@ function set_infinite_scrolling(){
     <?
     }
 }
-/*    we need to add this action on page's footer.
-    100 is a priority number that correpond a later execution.
 */
+
+/***    we need to add this action on page's footer.
+*    100 is a priority number that correpond a later execution.
+***/
+/*
 add_action( 'wp_footer', 'set_infinite_scrolling',100 );
+*/
 
 function waikiki_close_nav(){
     echo '<button class="nav-toggle">';
@@ -590,9 +589,7 @@ color: #0073aa;
 
 /**
  * Custom Flickity WooCommerce featured products slider
- *
-*/
-
+**/
 
 function waikiki_products_shortcode_func( $atts ) {
     $atts = shortcode_atts( array(
@@ -745,11 +742,12 @@ function wc3_woocommerce_recently_viewed_products( $atts, $content = null ) {
 	// Return whole content
 	return $content;
 }
-
 // Register the shortcode
 add_shortcode("woocommerce_recently_viewed_products", "wc3_woocommerce_recently_viewed_products");
 
-// Payemnt info efter footeren
+/******
+* Payment info efter footeren
+******/
 function payment_info_footer_bar () {
 	echo '<div class="sub-footer">
 	<div class="wrap">
@@ -793,9 +791,11 @@ add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 
 /*******
 * Mini cart Ajax call
 ******/
+/*
 function mode_theme_update_mini_cart() {
   echo wc_get_template( 'cart/mini-cart.php' );
   die();
 }
 add_filter( 'wp_ajax_nopriv_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );
 add_filter( 'wp_ajax_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );
+*/
