@@ -4501,7 +4501,7 @@ body.woocommerce-checkout .site-container .site-header {
     border: 1px solid #eaeaea;
     height: 0;
     position: absolute;
-    top: 65px;
+    top: 50px;
     z-index: 9999;
     background: white;
     width: 280px;
