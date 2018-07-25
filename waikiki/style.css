@@ -4544,6 +4544,7 @@ body.woocommerce-checkout .site-container .site-header {
 .cart-dropdown ul.cart_list li {
     height: 85px;
     overflow: hidden;
+    border: none !important;
 }
 
 .cart-dropdown ul.cart_list li a:nth-child(2) {
