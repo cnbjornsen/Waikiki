@@ -591,17 +591,17 @@ function my_login_logo_one() {
 ?>
 <style type="text/css">
 body.login div#login h1 a {
-background-image: url(http://test.waikiki.dk/wp-content/uploads/2018/05/Artboard-4.png);  //Add your own logo image in this url
+background-image: url(/wp-content/uploads/2018/05/Artboard-4.png);  //Add your own logo image in this url
 padding-bottom: 30px;
 }
 body.login {
-	background: url(http://test.waikiki.dk/wp-content/uploads/2018/07/sunova-nazare.jpg) center center fixed;
+	background: url(/wp-content/uploads/2018/07/sunova-nazare.jpg) center center fixed;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 .login #nav a {
-color: #0073aa;
+color: #0073aa !important;
 }
 </style>
 <?php
