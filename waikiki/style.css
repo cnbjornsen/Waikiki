@@ -9730,10 +9730,12 @@ flex-wrap: wrap;
     .flickity-prev-next-button.next {
       right: -44px;
     }
-    .title-area a img {
+    .title-area a img,
+    .wp-custom-logo .title-area {
       max-width: 125px;
     }
-    .site-header.shrink .title-area a img {
+    .site-header.shrink .title-area a img,
+    .site-header.shrink .wp-custom-logo .title-area {
       max-width: 115px;
     }
 }
