@@ -9266,6 +9266,11 @@ a.mini-filter-close {
   border-top: 1px solid #eee;
 }
 
+.sub-footer .sub-footer-list-item-head {
+  font-size: 14px;
+  font-weight: 400;
+}
+
 .sub-footer span.icon-footer-payment_visa,
 .sub-footer span.icon-footer-payment_mc,
 .sub-footer span.icon-footer-payment_maestro,

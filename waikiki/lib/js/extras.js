@@ -85,21 +85,3 @@ jQuery(document).ready(function () {
 
   });
 })
-
-/*
-jQuery(document).ready(function(){
- "use strict";
-// Define the PHP function to call from here
- var data = {
-   'action': 'mode_theme_update_mini_cart'
- };
- jQuery.post(
-   woocommerce_params.ajax_url, // The AJAX URL
-   data, // Send our PHP function
-   function(response){
-     jQuery('.cart-dropdown').html(response); // Repopulate the specific element with the new content
-   }
- );
-// Close anon function.
-});
-*/

@@ -377,7 +377,6 @@ function custom_load_extras_js() {
     wp_register_script('extras', get_stylesheet_directory_uri() . '/lib/js/extras.js', array(jquery));
     wp_enqueue_script ('extras');
 }
-
 add_filter( 'script_loader_tag', 'add_defer_attribute', 10, 2 );
 /**
  * Filter the HTML script tag of `font-awesome` script to add `defer` attribute.
@@ -400,16 +399,18 @@ if ( class_exists( 'WooCommerce' ) ) {
     //Add icon navigation cart and search
     add_action( 'genesis_after_title_area', 'waikiki_icon_nav' );
     function waikiki_icon_nav() {
-	  echo '<section class="icon-nav" id="icon-navigation">';
+	  	echo '<section class="icon-nav" id="icon-navigation">';
 
-	    echo '<div class="mini-cart"><div class="mini-cart-icon"><i class="fal fa-shopping-bag"></i></div><a class="cart-count">' . WC()->cart->cart_contents_count  . '</a>';
+	    	echo '<div class="mini-cart woocommerce"><div class="mini-cart-icon"><i class="fal fa-shopping-bag"></i></div><a class="cart-count">' . WC()->cart->cart_contents_count  . '</a>';
 				echo '<div class="cart-overlay cart-hidden">';
 					echo '<div class="cart-dropdown cart-hidden">';
 						echo '<div class="close-cart-icon"><i class="fal fa-times"></i></div>';
-        		woocommerce_mini_cart();
+							echo '<div class="widget_shopping_cart_content">';
+								woocommerce_mini_cart();
+							echo '</div>';
+						echo '</div>';
 					echo '</div>';
 				echo '</div>';
-			echo '</div>';
 
 			echo '<div class="waikiki-search"><div class="search-icon"><i class="fal fa-search"></i></div>';
 		    echo '<div class="search-content">';
@@ -419,6 +420,16 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 		echo '</section>';
     }
+
+	add_filter( 'woocommerce_add_to_cart_fragments', 'iconic_cart_count_fragments', 10, 1 );
+
+	function iconic_cart_count_fragments( $fragments ) {
+
+	    $fragments['a.cart-count'] = '<a class="cart-count">' . WC()->cart->get_cart_contents_count() . '</a>';
+
+	    return $fragments;
+
+	}
 
     // Add mini filter dropdown for mobile screens
     add_action( 'woocommerce_before_shop_loop', 'waikiki_add_filter' );
@@ -755,11 +766,11 @@ function payment_info_footer_bar () {
 		<div class="one-half first">
 	      <ul class="sub-footer-list sub-footer-list-payments">
 				    <lh class="sub-footer-list-item sub-footer-list-item-head">
-				        BETAL MED: Kreditkort, debetkort eller MobilePay    </lh>
+				        <strong>BETAL MED</strong>: Kreditkort, debetkort eller MobilePay    </lh>
 				    <li class="sub-footer-list-item"><span class="icon-footer-payment_visa inline-block"></span></li>
 				    <li class="sub-footer-list-item"><span class="icon-footer-payment_mc inline-block"></span></li>
+						<li class="sub-footer-list-item"><span class="icon-footer-payment_electron inline-block"></span></li>
 				    <li class="sub-footer-list-item"><span class="icon-footer-payment_maestro inline-block"></span></li>
-				    <li class="sub-footer-list-item"><span class="icon-footer-payment_electron inline-block"></span></li>
 				    <!--<li class="sub-footer-list-item"><span class="icon-footer-payment_paypal inline-block"></span></li>-->
 				    <li class="sub-footer-list-item"><span class="icon-footer-payment_mobilepay icon-footer-payment-extended inline-block"></span></li>
 				</ul>
@@ -787,15 +798,3 @@ function remove_add_to_cart_buttons() {
   }
 }
 add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
-
-/*******
-* Mini cart Ajax call
-******/
-/*
-function mode_theme_update_mini_cart() {
-  echo wc_get_template( 'cart/mini-cart.php' );
-  die();
-}
-add_filter( 'wp_ajax_nopriv_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );
-add_filter( 'wp_ajax_mode_theme_update_mini_cart', 'mode_theme_update_mini_cart' );
-*/
