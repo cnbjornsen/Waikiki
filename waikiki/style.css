@@ -4628,12 +4628,12 @@ site-header .wrap .icon-nav .mini-cart .cart-dropdown li {
     justify-content: center;
 }
 
-.header-widget-area .mini-cart .cart-dropdown .buttons .wc-forward,
-.site-header .mini-cart .cart-dropdown .buttons .wc-forward {
+.header-widget-area .mini-cart .cart-dropdown .buttons a:first-of-type .wc-forward,
+.site-header .mini-cart .cart-dropdown .buttons a:first-of-type .wc-forward{
     background-color: #ececec;
     color: #979797;
     margin-right: 15px;
-    flex: 2;
+    flex: 3;
 }
 
 .header-widget-area .mini-cart .cart-dropdown .buttons .checkout,
