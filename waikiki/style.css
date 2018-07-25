@@ -4580,6 +4580,9 @@ body.woocommerce-checkout .site-container .site-header {
     font-size: 20px;
     cursor: pointer;
 }
+.widget_shopping_cart_content {
+    padding:20px;
+}
 
 
 .header-widget-area .mini-cart .cart-dropdown li,
