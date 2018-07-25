@@ -4546,11 +4546,6 @@ body.woocommerce-checkout .site-container .site-header {
     overflow: hidden;
 }
 
-.header-widget-area .mini-cart .cart-dropdown li a:first-of-type,
-.site-header .mini-cart .cart-dropdown li a:first-of-type {
-    margin-right: 5px !important;
-}
-
 .cart-dropdown ul.cart_list li a:nth-child(2) {
     word-break: break-word;
     word-wrap: break-word;
