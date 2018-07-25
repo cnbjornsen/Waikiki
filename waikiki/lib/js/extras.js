@@ -26,6 +26,9 @@ jQuery(document).ready(function(){
         jQuery('input[type="search"]').get(0).focus();
 
     });
+    jQuery( '.search-form' ).click(function( event ) {
+      event.stopPropagation();
+    });
     //Searchbox dismiss - ESC key
     jQuery(".search-content").keyup(function(event){
 		if (event.keyCode == 27){
@@ -40,21 +43,22 @@ jQuery(document).ready(function(){
     // Show/hide the main navigation
     jQuery('.nav-toggle').click(function() {
         if ( jQuery('.nav-primary').hasClass('activated'))
-            jQuery('.nav-primary, .menu-toggle, .nav-toggle').removeClass('activated');
+            jQuery('.nav-primary,.menu-toggle,.nav-toggle').removeClass('activated');
         else
             jQuery('.nav-toggle').addClass('activated');
     });
-    jQuery('.menu-toggle').click(function() {
-            jQuery('.nav-toggle').addClass('activated');
-    });
+
     //show cart
     jQuery('.mini-cart-icon').click(function(){
       jQuery('.cart-dropdown,.cart-overlay').removeClass('cart-hidden');
-    })
+    });
     //Hide cart
-    jQuery('.close-cart-icon').click(function(){
+    jQuery('.close-cart-icon,.cart-overlay').click(function(){
       jQuery('.cart-dropdown,.cart-overlay').addClass('cart-hidden');
-    })
+    });
+    jQuery( '.cart-dropdown' ).click(function( event ) {
+      event.stopPropagation();
+    });
 });
 /*
 //after facetwp loads/refreshes, do following

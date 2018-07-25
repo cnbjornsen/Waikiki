@@ -563,12 +563,21 @@ function set_infinite_scrolling(){
 add_action( 'wp_footer', 'set_infinite_scrolling',100 );
 */
 
+//Add extra close button to primary sidebare nav
 function waikiki_close_nav(){
     echo '<button class="nav-toggle">';
         echo '<li></li><li></li><li></li>';
     echo '</button>';
 }
 add_action('genesis_before_menu-primary_wrap', 'waikiki_close_nav');
+
+//* Wrap .nav-primary in a custom div
+function genesis_child_nav($nav_output, $nav, $args) {
+
+	return '<div id="nav-overlay" class="nav-overlay nav-hide"></div>' . $nav_output;
+
+}
+add_filter( 'genesis_do_nav', 'genesis_child_nav', 10, 3 );
 
 /* Remove live search ajax CSS */
 function my_remove_searchwp_live_search_theme_css() {
