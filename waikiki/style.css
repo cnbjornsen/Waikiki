@@ -4623,25 +4623,30 @@ site-header .wrap .icon-nav .mini-cart .cart-dropdown li {
     margin: 0 !important;
 }
 
+.woocommerce-mini-cart__buttons {
+    display: flex;
+    justify-content: center;
+}
+
 .header-widget-area .mini-cart .cart-dropdown .buttons .wc-forward,
 .site-header .mini-cart .cart-dropdown .buttons .wc-forward {
-    display: none;
+    background-color: #ececec;
+    color: #979797;
+    margin-right: 15px;
+    flex: 2;
+}
+
+.header-widget-area .mini-cart .cart-dropdown .buttons .checkout,
+.site-header .mini-cart .cart-dropdown .buttons .checkout,
+.header-widget-area .mini-cart .cart-dropdown .buttons .wc-forward,
+.site-header .mini-cart .cart-dropdown .buttons .wc-forward {
+    text-align: center !important;
 }
 
 .header-widget-area .mini-cart .cart-dropdown .buttons .checkout,
 .site-header .mini-cart .cart-dropdown .buttons .checkout {
-    display: block !important;
-    text-align: center !important;
+    flex: 6;
 }
-
-.header-widget-area .mini-cart:hover .cart-dropdown,
-.site-header .mini-cart:hover .cart-dropdown,
-.site-header .icon-nav .mini-cart:hover .cart-dropdown {
-    /*transition: all .5s ease-in-out;
-    opacity: 1;
-    display: block;*/
-}
-
 
 /* Remove Paypal Express checkout button from mini cart */
 
