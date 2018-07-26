@@ -800,5 +800,7 @@ function remove_add_to_cart_buttons() {
 }
 add_action( 'woocommerce_after_shop_loop_item', 'remove_add_to_cart_buttons', 1 );
 
-// Ship to different address unticked by default
+// Ship to different address - unticked by default
 add_filter( 'woocommerce_ship_to_different_address_checked', '__return_false' );
+// Create customer account - ticked by default
+add_filter('woocommerce_create_account_default_checked' , '__return_true');
