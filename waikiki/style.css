@@ -4453,7 +4453,7 @@ body.woocommerce-checkout .site-container .site-header {
     height: 25px;
     color: white;
     font-size: 12px;
-    line-height: 25px;
+    line-height: 23px;
     text-align: center;
     display: inline-block;
     background-color: #FDD0AD;
@@ -4463,7 +4463,7 @@ body.woocommerce-checkout .site-container .site-header {
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
     border-radius: 50px;
-    right: -2px;
+    right: -6px;
     text-decoration: none;
 }
 
@@ -9223,11 +9223,13 @@ a.mini-filter-close {
     font-weight: 600;
 }
 
-.woocommerce div.product p.price {
-    display: flex;
-    flex-direction: column;
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+    /*display: flex;
+    flex-direction: column;*/
     font-family: Helvetica, Arial, sans-serif;
-
+    font-size: 3em;
+    font-weight: 600;
 }
 
 .woocommerce div.product p.price .woocommerce-price-suffix {
