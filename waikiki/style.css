@@ -1821,7 +1821,7 @@ img.alignright,
     width: 100%;
     margin: 0 auto;
     padding: 140px 0 70px;
-    padding: 14rem 0 7rem;
+    padding: 8rem 0 7rem;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -3870,7 +3870,7 @@ div.gs-faq .gs-faq__answer:last-of-type {
         float: right;
     }
     .page-header {
-        padding: 17rem 0 8rem;
+        padding: 10rem 0 8rem;
     }
     .has-nav-secondary .page-header {
         padding-top: 23rem;
@@ -4017,7 +4017,7 @@ div.gs-faq .gs-faq__answer:last-of-type {
         padding: 1.618em 0;
     }
     .page-header {
-        padding: 19rem 0 10rem;
+        padding: 10rem 0 10rem;
     }
     .has-nav-secondary .page-header {
         padding-top: 25rem;

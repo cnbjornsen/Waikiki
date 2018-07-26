@@ -362,14 +362,6 @@ function custom_load_flickity() {
     wp_enqueue_script( 'flickity-js', get_stylesheet_directory_uri() . '/lib/js/flickity.pkgd.min.js', array(), null );
     //wp_enqueue_style( 'flickity-css', get_stylesheet_directory_uri() . '/lib/css/flickity.min.css', array(), null );
 }
-// Enqueue Slick JS.min & CSS.
-add_action( 'wp_enqueue_scripts', 'custom_load_slick' );
-function custom_load_slick() {
-    wp_enqueue_script( 'slick-script', get_stylesheet_directory_uri().'/lib/js/slick.min.js', array('jquery'), '', true);
-    //wp_enqueue_style( 'slick-css', get_stylesheet_directory_uri() . '/lib/css/slick.css', array(), null );
-		//wp_enqueue_style( 'slick-css', get_stylesheet_directory_uri() . '/lib/css/slick-theme.css', array(), null );
-}
-
 
 // Enqueue Extras JS file.
 add_action( 'wp_enqueue_scripts', 'custom_load_extras_js' );
