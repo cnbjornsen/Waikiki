@@ -9808,7 +9808,7 @@ flex-wrap: wrap;
 }
 
 .nav-primary {
-    background-color: rgba(249, 216, 229, .8);
+    background-color: rgba(249, 216, 229);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
 }

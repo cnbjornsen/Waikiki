@@ -366,7 +366,7 @@ function custom_load_flickity() {
 // Enqueue Extras JS file.
 add_action( 'wp_enqueue_scripts', 'custom_load_extras_js' );
 function custom_load_extras_js() {
-    wp_register_script('extras', get_stylesheet_directory_uri() . '/lib/js/extras.js', array(), null);
+    wp_register_script('extras', get_stylesheet_directory_uri() . '/lib/js/extras.js', __FILE__ );//array(), null);
     wp_enqueue_script ('extras');
 }
 add_filter( 'script_loader_tag', 'add_defer_attribute', 10, 2 );
